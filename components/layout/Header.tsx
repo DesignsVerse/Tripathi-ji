@@ -32,8 +32,8 @@ export default function Header() {
                 </div>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-[#321414]">पंडित ज्योतिषाचार्य</h1>
-                <p className="text-sm text-[#321414] font-medium">वैदिक ज्योतिष एवं अंकज्योतिष विशेषज्ञ</p>
+                <h1 className="text-xl font-bold text-[#321414]">Pandit Jyotishacharya</h1>
+                <p className="text-sm text-[#321414] font-medium">Vedic Astrology & Numerology Expert</p>
               </div>
             </Link>
           </div>
@@ -47,13 +47,13 @@ export default function Header() {
                 className="text-[#321414] hover:bg-[#FF5722] hover:text-white px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 flex items-center"
               >
                 {item.name === 'Numerology' && (
-                  <span className="mr-1 text-[#FFD700]">⑧</span>
+                  <span className="mr-1 text-[#FFD700]"></span>
                 )}
                 {item.name === 'Palmistry' && (
-                  <span className="mr-1 text-[#FFD700]">✋</span>
+                  <span className="mr-1 text-[#FFD700]"></span>
                 )}
                 {item.name === 'Blog' && (
-                  <span className="mr-1 text-[#FFD700]">✍️</span>
+                  <span className="mr-1 text-[#FFD700]"></span>
                 )}
                 {item.name}
               </Link>
@@ -63,7 +63,7 @@ export default function Header() {
           {/* Contact CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button className="bg-[#321414] hover:bg-[#4A2A2A] text-[#FFD700] shadow-lg hover:shadow-[#FF5722]/50 transition-all">
-              सम्पर्क करें
+              Contact Us
             </Button>
           </div>
 
@@ -112,7 +112,7 @@ export default function Header() {
             ))}
             <div className="px-3 pt-2 space-y-2 border-t border-[#FF5722]/50 mt-2">
               <Button className="w-full bg-[#321414] hover:bg-[#4A2A2A] text-[#FFD700]">
-                सम्पर्क करें
+                Contact Us
               </Button>
             </div>
           </div>

@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
 
         {/* Marquee Container */}
         <div 
-          className="relative overflow-hidden h-[400px]"
+          className="relative overflow-hidden h-[250px]"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-sm text-[#321414]/90 mb-4 flex-grow italic">
+                  <blockquote className="text-sm text-[#321414]/90 mb-4 italic">
                     "{testimonial.text}"
                   </blockquote>
 
