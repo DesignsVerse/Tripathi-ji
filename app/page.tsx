@@ -24,7 +24,6 @@ export default function Home() {
         <FAQSection />
       </main>
       <Footer />
-      <SupportBox />
     </div>
   );
 }
