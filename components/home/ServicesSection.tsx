@@ -60,9 +60,7 @@ export default function ServicesSection() {
               
               <CardHeader className="pb-5">
                 <div className="flex items-start space-x-5 mb-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-[#FF9933] to-[#FF5722] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform duration-500">
-                    {serviceIcons[service.icon] || <Star className="w-7 h-7 text-[#FFD700]" />}
-                  </div>
+                  
                   <div>
                     <CardTitle className="text-2xl font-bold text-[#321414] group-hover:text-[#FF5722] transition-colors duration-300">
                       {service.title}
