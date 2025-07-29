@@ -46,7 +46,7 @@ export default function HeroSection() {
             {/* Main image with golden frame */}
             <div className="relative z-10 h-full w-full rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl lg:shadow-3xl border-l-4 border-t-4 border-r-2 border-b-2 border-[#FFD700] transform rotate-1 hover:rotate-0 transition-transform duration-500">
               <img
-                src="/astrologer-premium.jpg"
+                src="/hero/mahakaal.jpg"
                 alt="Vedic Astrology Consultation"
                 className="w-full h-full object-cover object-top"
               />
