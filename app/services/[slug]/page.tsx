@@ -230,7 +230,6 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                         <span className="text-2xl">{relatedService.icon}</span>
                         <h3 className="text-lg font-semibold text-gray-900">{relatedService.title}</h3>
                       </div>
-                      <p className="text-gray-600 text-sm mb-4">{relatedService.shortDesc}</p>
                       <div className="flex justify-between items-center">
                         <span className="font-semibold text-orange-600">{relatedService.price}</span>
                         <Link href={`/services/${relatedService.slug}`}>
