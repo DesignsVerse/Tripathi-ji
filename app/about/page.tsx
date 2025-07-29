@@ -3,7 +3,7 @@ import Footer from '@/components/layout/Footer';
 import SupportBox from '@/components/home/SupportBox';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Award, Users, Clock, BookOpen, Heart, Shield, Target } from 'lucide-react';
+import { Star, Award, Users, Clock, BookOpen, Heart, Shield, Target, Sparkles, Gem, Globe, Scroll } from 'lucide-react';
 
 export default function AboutPage() {
   const achievements = [
@@ -17,141 +17,157 @@ export default function AboutPage() {
     {
       icon: Heart,
       title: 'Compassionate Guidance',
-      description: 'We approach every consultation with empathy and understanding, recognizing that each person\'s journey is unique and sacred.'
+      description: 'Empathetic consultations recognizing each journey as sacred'
     },
     {
       icon: Shield,
       title: 'Authentic Wisdom',
-      description: 'Our practices are rooted in traditional Vedic astrology, passed down through generations of learned spiritual masters.'
+      description: 'Rooted in traditional Vedic astrology passed through generations'
     },
     {
       icon: Target,
       title: 'Practical Solutions',
-      description: 'We provide actionable insights and remedies that can be practically implemented in your daily life for positive transformation.'
+      description: 'Actionable insights for real transformation in daily life'
     },
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-[#FFF9F2] to-white">
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-50 to-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FFEBD5] to-[#FFF5EB] overflow-hidden">
+          {/* Cosmic elements */}
+          <Sparkles className="absolute top-20 left-20 w-8 h-8 text-[#FF9933]/30 animate-pulse" />
+          <Star className="absolute bottom-20 right-20 w-8 h-8 text-[#FF9933]/30 animate-spin-slow" />
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <h1 className="text-5xl font-bold text-gray-900 leading-tight">
-                    About
-                    <span className="text-orange-600 block">Pandit Tripathi</span>
-                  </h1>
-                  
-                  <p className="text-xl text-gray-600 leading-relaxed">
-                    A beacon of ancient wisdom in the modern world, guiding souls 
-                    toward their true purpose through the sacred science of Vedic astrology.
-                  </p>
+              <div className="space-y-6">
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/30 shadow-md mb-6">
+                  <Sparkles className="w-5 h-5 text-[#321414]" />
+                  <span className="ml-2 text-sm font-bold text-[#321414]">Vedic Astrologer</span>
                 </div>
+                
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#321414] leading-tight">
+                  Meet <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FF9933]">Pandit Tripathi</span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed">
+                  A beacon of ancient wisdom guiding souls toward their true purpose through sacred Vedic sciences.
+                </p>
 
-                <div className="flex items-center space-x-6 text-sm">
-                  <div className="flex items-center space-x-2 text-orange-600">
+                <div className="flex flex-wrap gap-4">
+                  <div className="flex items-center space-x-2 text-[#FF5722]">
                     <Star className="w-5 h-5 fill-current" />
                     <span className="font-medium">Master Astrologer</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-orange-600">
+                  <div className="flex items-center space-x-2 text-[#FF5722]">
                     <Award className="w-5 h-5" />
                     <span className="font-medium">20+ Years Experience</span>
                   </div>
                 </div>
 
-                <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white shadow-lg hover:shadow-[#FF5722]/50 mt-6"
+                >
                   Book Personal Consultation
                 </Button>
               </div>
               
               <div className="relative">
-                <div className="relative z-10">
+                <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
                   <img
-                    src="https://images.pexels.com/photos/6473766/pexels-photo-6473766.jpeg?auto=compress&cs=tinysrgb&w=600"
-                    alt="Pandit Tripathi - Master Vedic Astrologer"
-                    className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
+                    src="/astrologer-profile.jpg"
+                    alt="Pandit Tripathi"
+                    className="w-full h-[500px] object-cover object-top"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#321414]/40 to-transparent" />
                 </div>
                 
-                <div className="absolute -top-6 -right-6 w-72 h-72 bg-gradient-to-br from-orange-200 to-orange-100 rounded-full opacity-20 blur-3xl"></div>
-                <div className="absolute -bottom-6 -left-6 w-96 h-96 bg-gradient-to-tr from-orange-100 to-orange-50 rounded-full opacity-30 blur-3xl"></div>
+                {/* Floating elements */}
+                <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-[#FFD700] z-20">
+                  <div className="flex items-center">
+                    <Gem className="w-6 h-6 text-[#FF5722]" />
+                    <span className="ml-2 text-sm font-medium">Gemstone Expert</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Journey Section */}
-        <section className="py-20 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="space-y-8">
-                <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                  A Journey of Spiritual Discovery
+                <h2 className="text-3xl md:text-4xl font-bold text-[#321414] mb-6">
+                  Spiritual <span className="text-[#FF5722]">Journey</span>
                 </h2>
                 
-                <div className="space-y-6 text-gray-600 leading-relaxed">
+                <div className="space-y-6 text-[#321414]/90 leading-relaxed">
                   <p>
-                    Born into a family of traditional astrologers in the sacred city of Varanasi, 
-                    Pandit Tripathi was introduced to the divine science of Jyotish at an early age. 
-                    Under the guidance of his revered grandfather, a renowned astrologer of his time, 
-                    he began his spiritual journey into the depths of Vedic wisdom.
+                    Born into a lineage of Vedic scholars in Varanasi, Pandit Tripathi was initiated into 
+                    Jyotish Shastra at age 12. His grandfather, a renowned astrologer, recognized his 
+                    spiritual inclination and began his training in the sacred texts.
                   </p>
                   
                   <p>
-                    For over two decades, Pandit Tripathi has dedicated his life to mastering the 
-                    intricate art of Vedic astrology, studying ancient Sanskrit texts, and learning 
-                    from various gurus across India. His approach combines traditional knowledge 
-                    with practical understanding, making cosmic wisdom accessible to modern seekers.
+                    Over two decades, he mastered Vedic astrology under various gurus across India, 
+                    combining traditional knowledge with modern applicability. His approach makes cosmic 
+                    wisdom accessible to contemporary seekers without diluting its profundity.
                   </p>
                   
                   <p>
-                    What sets Pandit Tripathi apart is his compassionate approach to astrology. 
-                    He believes that the stars guide us not to create fear, but to illuminate the 
-                    path toward our highest potential. His consultations are known for their accuracy, 
-                    depth, and the practical remedies that bring real transformation to people's lives.
+                    Panditji believes astrology should illuminate paths, not create fear. His consultations 
+                    blend accuracy with compassion, offering practical remedies that transform lives.
                   </p>
                 </div>
               </div>
               
               <div className="space-y-6">
-                <Card className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 border-0">
+                <Card className="p-6 bg-gradient-to-br from-[#FFF5EB] to-[#FFEBD5] border-0 shadow-sm">
                   <CardContent className="p-0">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Educational Background</h3>
-                    <ul className="space-y-3 text-gray-700">
+                    <h3 className="text-2xl font-bold text-[#321414] mb-4 flex items-center">
+                      <Scroll className="w-6 h-6 text-[#FF5722] mr-2" />
+                      Education
+                    </h3>
+                    <ul className="space-y-3 text-[#321414]/90">
                       <li className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Master's in Vedic Astrology from Sanskrit University</span>
+                        <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
+                        <span>Masters in Vedic Astrology, Sanskrit University</span>
                       </li>
                       <li className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Advanced Certification in Palmistry & Numerology</span>
+                        <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
+                        <span>Advanced Palmistry & Numerology Certification</span>
                       </li>
                       <li className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Specialized Training in Gemstone Therapy</span>
+                        <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
+                        <span>Gemstone Therapy Specialist</span>
                       </li>
                       <li className="flex items-start space-x-3">
-                        <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
                         <span>Certified Vastu Consultant</span>
                       </li>
                     </ul>
                   </CardContent>
                 </Card>
                 
-                <Card className="p-6 border-orange-200">
+                <Card className="p-6 border-[#FFD700] shadow-sm">
                   <CardContent className="p-0">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Specializations</h3>
-                    <div className="grid grid-cols-2 gap-3">
-                      <span className="text-sm bg-orange-100 text-orange-700 px-3 py-2 rounded-full text-center">Kundli Analysis</span>
-                      <span className="text-sm bg-orange-100 text-orange-700 px-3 py-2 rounded-full text-center">Career Guidance</span>
-                      <span className="text-sm bg-orange-100 text-orange-700 px-3 py-2 rounded-full text-center">Marriage Compatibility</span>
-                      <span className="text-sm bg-orange-100 text-orange-700 px-3 py-2 rounded-full text-center">Gemstone Therapy</span>
-                      <span className="text-sm bg-orange-100 text-orange-700 px-3 py-2 rounded-full text-center">Vastu Shastra</span>
-                      <span className="text-sm bg-orange-100 text-orange-700 px-3 py-2 rounded-full text-center">Numerology</span>
+                    <h3 className="text-2xl font-bold text-[#321414] mb-4 flex items-center">
+                      <Target className="w-6 h-6 text-[#FF5722] mr-2" />
+                      Specializations
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {['Kundli Analysis', 'Career Guidance', 'Marriage Compatibility', 
+                        'Gemstone Therapy', 'Vastu Shastra', 'Numerology'].map((item) => (
+                        <span key={item} className="text-sm bg-[#FFEBD5] text-[#FF5722] px-3 py-1.5 rounded-full">
+                          {item}
+                        </span>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
@@ -161,96 +177,65 @@ export default function AboutPage() {
         </section>
 
         {/* Achievements */}
-        <section className="py-20 bg-gradient-to-br from-orange-50 to-orange-100">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-[#FFF5EB] to-[#FFEBD5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Two Decades of Dedicated Service
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#321414] mb-4">
+                Two Decades of <span className="text-[#FF5722]">Spiritual Service</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our commitment to authentic Vedic wisdom has touched thousands of lives 
-                across the globe, bringing clarity, peace, and positive transformation.
+              <p className="text-lg text-[#321414]/90 max-w-3xl mx-auto">
+                Our authentic Vedic guidance has brought clarity and transformation to seekers worldwide
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {achievements.map((achievement, index) => {
                 const IconComponent = achievement.icon;
                 
                 return (
-                  <div key={index} className="text-center p-8 bg-white rounded-2xl shadow-lg">
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <IconComponent className="w-8 h-8 text-white" />
+                  <div key={index} className="text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-14 h-14 bg-gradient-to-br from-[#FF5722] to-[#FF9933] rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-4xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-[#321414] mb-1">
                       {achievement.number}
                     </h3>
-                    <p className="text-lg font-semibold text-orange-600">
+                    <p className="text-sm md:text-base font-medium text-[#FF5722]">
                       {achievement.label}
                     </p>
                   </div>
                 );
               })}
             </div>
-
-            {/* Recognition */}
-            <Card className="max-w-4xl mx-auto border-0 shadow-xl">
-              <CardContent className="p-12 text-center">
-                <h3 className="text-3xl font-bold text-gray-900 mb-6">Recognition & Awards</h3>
-                <div className="grid md:grid-cols-3 gap-8">
-                  <div className="space-y-2">
-                    <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
-                      <Award className="w-8 h-8 text-orange-600" />
-                    </div>
-                    <h4 className="font-semibold text-gray-900">Best Astrologer Award</h4>
-                    <p className="text-sm text-gray-600">Indian Astrology Council 2022</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
-                      <Star className="w-8 h-8 text-orange-600 fill-current" />
-                    </div>
-                    <h4 className="font-semibold text-gray-900">Excellence in Service</h4>
-                    <p className="text-sm text-gray-600">Vedic Sciences Institute 2021</p>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
-                      <Users className="w-8 h-8 text-orange-600" />
-                    </div>
-                    <h4 className="font-semibold text-gray-900">Community Service</h4>
-                    <p className="text-sm text-gray-600">Social Welfare Society 2020</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </section>
 
         {/* Values */}
-        <section className="py-20 bg-white">
+        <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                Our Core Values
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#321414] mb-4">
+                Our <span className="text-[#FF5722]">Core Values</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                The principles that guide our approach to spiritual counseling and astrological consultation
+              <p className="text-lg text-[#321414]/90 max-w-3xl mx-auto">
+                Principles that guide our spiritual counseling and astrological practice
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-12">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {values.map((value, index) => {
                 const IconComponent = value.icon;
                 
                 return (
-                  <Card key={index} className="p-8 text-center hover:shadow-lg transition-shadow duration-300 border-orange-100">
-                    <CardContent className="p-0 space-y-6">
-                      <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto">
-                        <IconComponent className="w-10 h-10 text-white" />
+                  <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow border-[#FFD700]">
+                    <CardContent className="p-0 space-y-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#FF5722] to-[#FF9933] rounded-full flex items-center justify-center mx-auto">
+                        <IconComponent className="w-8 h-8 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900">
+                      <h3 className="text-xl font-bold text-[#321414]">
                         {value.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-[#321414]/80">
                         {value.description}
                       </p>
                     </CardContent>
@@ -261,42 +246,34 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Mission Statement */}
-        <section className="py-20 bg-gradient-to-br from-orange-600 to-orange-700 text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-8">Our Mission</h2>
-            <p className="text-2xl text-orange-100 leading-relaxed mb-12">
-              "To bridge the ancient wisdom of Vedic astrology with modern life, 
-              helping individuals discover their true purpose, overcome challenges, 
-              and live in harmony with their cosmic blueprint."
+        {/* Mission */}
+        <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FF5722] to-[#FF9933] text-white overflow-hidden">
+          {/* Decorative elements */}
+          <Sparkles className="absolute top-20 left-20 w-8 h-8 text-white/20" />
+          <Star className="absolute bottom-20 right-20 w-8 h-8 text-white/20 animate-spin-slow" />
+          
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full border border-white/30 mb-6">
+              <Globe className="w-5 h-5 text-white" />
+              <span className="ml-2 text-sm font-bold">Our Spiritual Mission</span>
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Guiding You Toward <span className="text-[#FFD700]">Cosmic Harmony</span>
+            </h2>
+            
+            <p className="text-xl text-orange-100 leading-relaxed mb-8 max-w-3xl mx-auto">
+              "To bridge ancient Vedic wisdom with modern life, helping individuals discover their 
+              true purpose and live in harmony with their cosmic blueprint."
             </p>
             
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
-                <h3 className="text-xl font-semibold mb-4">Our Vision</h3>
-                <p className="text-orange-100">
-                  To be the most trusted source of authentic Vedic astrological guidance, 
-                  spreading spiritual awareness and positive transformation across the globe.
-                </p>
-              </div>
-              <div className="bg-white/10 p-8 rounded-2xl backdrop-blur-sm">
-                <h3 className="text-xl font-semibold mb-4">Our Promise</h3>
-                <p className="text-orange-100">
-                  Every consultation is treated with the utmost respect, confidentiality, 
-                  and spiritual dedication, ensuring you receive genuine guidance for your journey.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-12">
-              <Button 
-                size="lg" 
-                variant="secondary" 
-                className="bg-white text-orange-600 hover:bg-orange-50 px-12 py-4 text-lg"
-              >
-                Begin Your Spiritual Journey
-              </Button>
-            </div>
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="bg-white text-[#FF5722] hover:bg-orange-50 px-8 py-4 font-bold shadow-lg hover:shadow-xl"
+            >
+              Begin Your Journey
+            </Button>
           </div>
         </section>
       </main>

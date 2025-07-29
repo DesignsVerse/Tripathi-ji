@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { testimonials } from '@/data/services';
+import { testimonials } from '@/data/testimonials';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Star, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export default function TestimonialsSection() {
   const marqueeRef = useRef<HTMLDivElement>(null);
@@ -17,18 +19,15 @@ export default function TestimonialsSection() {
     if (!marquee) return;
 
     let animationFrameId: number;
-    let speed = 1; // pixels per frame
+    let speed = 0.5; // Increased for smoother scrolling
     let position = 0;
 
     const animate = () => {
       if (!isPaused) {
         position -= speed;
-        
-        // Reset position when half way through
         if (position <= -marquee.scrollWidth / 2) {
           position = 0;
         }
-        
         marquee.style.transform = `translateX(${position}px)`;
       }
       animationFrameId = requestAnimationFrame(animate);
@@ -39,48 +38,62 @@ export default function TestimonialsSection() {
   }, [isPaused]);
 
   return (
-    <section className="py-20 bg-[#FFF5E6]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 md:py-20 bg-white overflow-hidden">
+      {/* Cosmic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <div className="absolute top-8 left-8 text-[#FF9933] text-5xl md:text-6xl animate-pulse">✧</div>
+        <div className="absolute bottom-8 right-8 text-[#FF9933] text-5xl md:text-6xl animate-pulse">✦</div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:12px_12px]"></div>
+      </div>
+
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 " >
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#321414] mb-4">
-            Client Experiences
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border-2 border-[#FF5722]/50 shadow-lg mb-6">
+            <Sparkles className="w-5 h-5 text-[#321414]" />
+            <span className="ml-3 text-base md:text-lg font-bold text-[#321414]">Client Stories</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#321414] mb-4">
+            <span className="relative inline-block">
+              Transformations
+              <span className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-[#FFD700] to-[#FF5722] z-0 rounded"></span>
+            </span>{' '}
+            <span className="text-[#FF5722]">Through Vedic Wisdom</span>
           </h2>
-          <p className="text-xl text-[#321414]/90 max-w-3xl mx-auto">
-            Transformations through authentic Vedic guidance
+          <p className="text-lg md:text-xl text-[#321414]/90 max-w-3xl mx-auto leading-relaxed">
+            Hear from our clients about how Vedic guidance has illuminated their paths.
           </p>
         </div>
 
         {/* Marquee Container */}
-        <div 
-          className="relative overflow-hidden h-[250px]"
+        <div
+          className="relative  overflow-hidden h-[280px] md:h-[280px] "
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Marquee Content */}
-          <div 
+          <div
             ref={marqueeRef}
-            className="absolute top-0 left-0 flex space-x-6 h-full"
+            className="absolute top-0 left-0 flex space-x-6 h-full pb-2 pt-4"
             style={{ width: 'max-content' }}
           >
             {duplicatedTestimonials.map((testimonial, index) => (
-              <Card 
-                key={`${testimonial.id}-${index}`} 
-                className="w-[300px] h-full flex-shrink-0 border border-[#FF9933]/30 hover:border-[#FF5722]/50 transition-colors duration-300"
+              <Card
+                key={`${testimonial.id}-${index}`}
+                className="group w-[320px] md:w-[360px] h-90% flex-shrink-0 border border-[#FF9933]/20 hover:border-[#FF5722]/40 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 bg-white/95 hover:bg-white"
               >
                 <CardContent className="p-6 h-full flex flex-col">
                   {/* Stars */}
                   <div className="flex mb-4">
                     {[...Array(5)].map((_, i) => (
-                      <Star 
-                        key={i} 
-                        className="w-4 h-4 text-[#FF9933] fill-current" 
+                      <Star
+                        key={i}
+                        className="w-5 h-5 text-[#FF9933] fill-current"
                       />
                     ))}
                   </div>
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-sm text-[#321414]/90 mb-4 italic">
+                  <blockquote className="text-base text-[#321414]/90 mb-4 italic flex-grow line-clamp-4">
                     "{testimonial.text}"
                   </blockquote>
 
@@ -90,16 +103,16 @@ export default function TestimonialsSection() {
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
-                        className="w-10 h-10 rounded-full object-cover border-2 border-[#FF9933]"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-[#FF9933]"
                       />
                       <div>
-                        <h4 className="font-semibold text-[#321414] text-sm">
+                        <h4 className="text-xl font-semibold text-[#321414] group-hover:text-[#FF5722]">
                           {testimonial.name}
                         </h4>
-                        <p className="text-[#321414]/70 text-xs">
+                        <p className="text-[#321414]/70 text-sm">
                           {testimonial.location}
                         </p>
-                        <p className="text-[#FF5722] text-xs font-medium">
+                        <p className="text-[#FF5722] text-sm font-medium">
                           {testimonial.service}
                         </p>
                       </div>
@@ -111,15 +124,7 @@ export default function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Indicator */}
-        <div className="flex justify-center mt-8">
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 rounded-full bg-[#FF5722]"></div>
-            <div className="text-sm text-[#321414]/70">
-              Scroll horizontally to view more
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

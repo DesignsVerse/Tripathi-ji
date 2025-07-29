@@ -7,10 +7,11 @@ import { Button } from '@/components/ui/button';
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Numerology', href: '/numerology' },
-  { name: 'Palmistry', href: '/palmistry' },
+  { name: 'Panchang', href: '/panchang' },
+  { name: 'Services', href: '/services' },
+  // { name: 'Palmistry', href: '/palmistry' },
   { name: 'Horoscope', href: '/horoscope' },
-  { name: 'Vastu', href: '/vastu' },
+  { name: 'Support  ', href: '/support' },
   { name: 'Blog', href: '/blog' }, // Added blog section
   { name: 'About', href: '/about' },
 ];

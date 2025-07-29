@@ -1,11 +1,13 @@
+
+
 import { notFound } from 'next/navigation';
-import { blogPosts } from '@/data/services';
+import { blogPosts } from '@/data/blog';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import SupportBox from '@/components/home/SupportBox';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, Tag, Star, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 export async function generateStaticParams() {
@@ -24,165 +26,198 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
   const relatedPosts = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-[#FFF9F2] to-white">
       <Header />
       <main>
-        {/* Article Header */}
-        <section className="bg-gradient-to-br from-orange-50 to-white py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center mb-8">
+        {/* Article Header with Image */}
+        <section className="relative py-16 md:py-20 bg-gradient-to-br from-[#FFEBD5] to-[#FFF5EB] overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:10px_10px] opacity-10"></div>
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="mb-8">
               <Link 
                 href="/blog" 
-                className="flex items-center text-orange-600 hover:text-orange-700 transition-colors"
+                className="inline-flex items-center text-[#FF5722] hover:text-[#E64A19] transition-colors group"
               >
-                <ArrowLeft className="w-5 h-5 mr-2" />
+                <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
                 Back to Blog
               </Link>
             </div>
             
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 text-sm text-gray-500">
-                <div className="flex items-center space-x-1">
-                  <User className="w-4 h-4" />
-                  <span>{post.author}</span>
+            <div className="grid lg:grid-cols-5 gap-8">
+              {/* Image and Main Content */}
+              <div className="lg:col-span-3 order-1">
+                <div className="aspect-video overflow-hidden rounded-2xl shadow-xl border-4 border-white mb-6">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <div className="flex items-center space-x-1">
-                  <Calendar className="w-4 h-4" />
-                  <span>{new Date(post.date).toLocaleDateString()}</span>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#321414] leading-tight mb-4">
+                  {post.title}
+                </h1>
+                <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed mb-6">
+                  {post.excerpt}
+                </p>
+                <div className="flex flex-wrap gap-4 text-sm text-[#321414]/80 mb-6">
+                  <div className="flex items-center space-x-2">
+                    <User className="w-5 h-5 text-[#FF5722]" />
+                    <span>{post.author}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="w-5 h-5 text-[#FF5722]" />
+                    <span>{new Date(post.date).toLocaleDateString()}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Clock className="w-5 h-5 text-[#FF5722]" />
+                    <span>{post.readTime}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <BookOpen className="w-5 h-5 text-[#FF5722]" />
+                    <span>{post.category}</span>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-1">
-                  <Clock className="w-4 h-4" />
-                  <span>{post.readTime}</span>
-                </div>
-                <div className="flex items-center space-x-1">
-                  <BookOpen className="w-4 h-4" />
-                  <span>{post.category}</span>
-                </div>
-              </div>
-              
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                {post.title}
-              </h1>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                {post.excerpt}
-              </p>
-              
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <span className="px-3 py-1 bg-orange-100 text-orange-700 text-sm font-medium rounded-full">
-                    {post.category}
-                  </span>
-                  <div className="flex space-x-1">
+                <div className="flex flex-wrap justify-between gap-4">
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-4 py-2 bg-[#FFEBD5] text-[#FF5722] text-sm font-semibold rounded-full">
+                      {post.category}
+                    </span>
                     {post.tags.map((tag, index) => (
-                      <span key={index} className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                      <span key={index} className="px-3 py-1.5 bg-white text-[#321414]/80 text-xs rounded-full border border-[#FFD700]/50 hover:bg-[#FFD700]/10 transition-colors">
                         #{tag}
                       </span>
                     ))}
                   </div>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="text-[#FF5722] border-[#FF5722] hover:bg-[#FFEBD5] hover:text-[#E64A19] transition-colors rounded-lg"
+                  >
+                    <Share2 className="w-4 h-4 mr-2" />
+                    Share
+                  </Button>
                 </div>
-                
-                <Button variant="outline" size="sm" className="text-orange-600 border-orange-600 hover:bg-orange-50">
-                  <Share2 className="w-4 h-4 mr-2" />
-                  Share
-                </Button>
               </div>
-            </div>
-          </div>
-        </section>
+              
+              {/* Sidebar */}
+              <div className="lg:col-span-2 order-2 lg:order-2 space-y-6">
+                {/* CTA */}
+                <Card className="bg-gradient-to-br from-[#FF5722] to-[#FF9933] text-white border-0 shadow-xl rounded-2xl">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Star className="w-7 h-7 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">Personalized Guidance</h3>
+                    <p className="text-white/90 text-sm mb-6">
+                      Discover your path with a tailored astrological reading from Pandit Tripathi.
+                    </p>
+                    <Button 
+                      variant="secondary" 
+                      size="lg" 
+                      className="w-full bg-white text-[#FF5722] hover:bg-white/90 font-semibold rounded-lg"
+                    >
+                      Book Consultation
+                    </Button>
+                  </CardContent>
+                </Card>
 
-        {/* Featured Image */}
-        <section className="py-8">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="aspect-video overflow-hidden rounded-2xl shadow-2xl">
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
+                {/* More Articles */}
+                <Card className="border-[#FFD700]/30 shadow-md rounded-2xl">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold text-[#321414] mb-4 flex items-center">
+                      <BookOpen className="w-6 h-6 mr-2 text-[#FF5722]" />
+                      More Articles
+                    </h3>
+                    <div className="space-y-4">
+                      {relatedPosts.map(post => (
+                        <Link 
+                          key={post.id} 
+                          href={`/blog/${post.slug}`}
+                          className="block group"
+                        >
+                          <div className="flex items-center space-x-4">
+                            <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
+                              <img 
+                                src={post.image} 
+                                alt={post.title}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              />
+                            </div>
+                            <div>
+                              <h4 className="text-sm font-semibold text-[#321414] group-hover:text-[#FF5722] transition-colors line-clamp-2">
+                                {post.title}
+                              </h4>
+                              <p className="text-xs text-[#321414]/60">{post.readTime}</p>
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Tags */}
+                <Card className="border-[#FFD700]/30 shadow-md rounded-2xl">
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-semibold text-[#321414] mb-4 flex items-center">
+                      <Tag className="w-6 h-6 mr-2 text-[#FF5722]" />
+                      Related Topics
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.map((tag, index) => (
+                        <Link 
+                          key={index} 
+                          href={`/blog?tag=${tag}`}
+                          className="px-3 py-1.5 bg-[#FFEBD5] text-[#FF5722] text-xs font-medium rounded-full hover:bg-[#FFD700]/30 transition-colors"
+                        >
+                          #{tag}
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Article Content */}
-        <section className="py-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-4 gap-12">
-              {/* Main Content */}
-              <div className="lg:col-span-3">
-                <article className="prose prose-lg prose-orange max-w-none">
-                  <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }} />
-                </article>
-                
-                {/* Author Bio */}
-                <div className="mt-12 p-8 bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150"
-                      alt={post.author}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-orange-200"
-                    />
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">{post.author}</h3>
-                      <p className="text-gray-600 mb-2">Vedic Astrologer & Spiritual Guide</p>
-                      <p className="text-gray-600 text-sm">
-                        With over 20 years of experience in Vedic astrology, Pandit Tripathi has helped 
-                        thousands of people find clarity and direction in their spiritual journey.
-                      </p>
-                    </div>
-                  </div>
+        <section className="py-12 md:py-16">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <article className="prose prose-lg max-w-none">
+              {post.sections.map((section, index) => (
+                <div key={index} className="mb-10 last:mb-0">
+                  {section.heading && (
+                    <h2 
+                      id={section.heading.toLowerCase().replace(/ /g, '-')} 
+                      className="text-2xl md:text-3xl font-bold text-[#321414] mb-4 scroll-mt-20"
+                    >
+                      {section.heading}
+                    </h2>
+                  )}
+                  <div 
+                    className="text-[#321414]/90 leading-relaxed space-y-4 text-base md:text-lg"
+                    dangerouslySetInnerHTML={{ __html: section.description.replace(/\n/g, '<br />') }}
+                  />
                 </div>
-              </div>
-              
-              {/* Sidebar */}
-              <div className="lg:col-span-1">
-                <div className="sticky top-8 space-y-8">
-                  {/* Table of Contents */}
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                        <BookOpen className="w-5 h-5 mr-2 text-orange-600" />
-                        Quick Navigation
-                      </h3>
-                      <ul className="space-y-2 text-sm">
-                        <li><a href="#" className="text-orange-600 hover:text-orange-700">Introduction</a></li>
-                        <li><a href="#" className="text-orange-600 hover:text-orange-700">Understanding Vedic Astrology</a></li>
-                        <li><a href="#" className="text-orange-600 hover:text-orange-700">Modern Applications</a></li>
-                        <li><a href="#" className="text-orange-600 hover:text-orange-700">Practical Benefits</a></li>
-                        <li><a href="#" className="text-orange-600 hover:text-orange-700">Conclusion</a></li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                  
-                  {/* Tags */}
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-gray-900 mb-4 flex items-center">
-                        <Tag className="w-5 h-5 mr-2 text-orange-600" />
-                        Tags
-                      </h3>
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.map((tag, index) => (
-                          <span key={index} className="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                  
-                  {/* CTA */}
-                  <Card className="bg-gradient-to-br from-orange-600 to-orange-700 text-white border-0">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="font-semibold mb-2">Need Personal Guidance?</h3>
-                      <p className="text-orange-100 text-sm mb-4">
-                        Get personalized astrological insights from Pandit Tripathi
-                      </p>
-                      <Button variant="secondary" size="sm" className="w-full bg-white text-orange-600 hover:bg-orange-50">
-                        Book Consultation
-                      </Button>
-                    </CardContent>
-                  </Card>
+              ))}
+            </article>
+            
+            {/* Author Bio */}
+            <div className="mt-12 p-8 bg-gradient-to-br from-[#FFEBD5] to-[#FFD700]/20 rounded-2xl border border-[#FFD700]/30 shadow-md">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <img
+                  src="/astrologer-profile.jpg"
+                  alt={post.author}
+                  className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
+                />
+                <div className="text-center sm:text-left">
+                  <h3 className="text-xl font-bold text-[#321414]">{post.author}</h3>
+                  <p className="text-[#321414]/80 mb-2 text-sm font-medium">Vedic Astrologer & Spiritual Guide</p>
+                  <p className="text-[#321414]/80 text-sm leading-relaxed">
+                    With over 20 years of experience, Pandit Tripathi has guided thousands in their spiritual journey
+                    through authentic Vedic wisdom and compassionate counseling.
+                  </p>
                 </div>
               </div>
             </div>
@@ -190,43 +225,45 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
         </section>
 
         {/* Related Articles */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              Related Articles
-            </h2>
+        <section className="py-12 md:py-16 bg-gradient-to-b from-[#FFEBD5] to-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10 md:mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#321414]">
+                More <span className="text-[#FF5722]">Spiritual Insights</span>
+              </h2>
+              <p className="text-[#321414]/80 mt-2 text-lg">Continue your journey with these related articles</p>
+            </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              {relatedPosts.map((relatedPost) => (
-                <Card key={relatedPost.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {relatedPosts.map((post) => (
+                <Card key={post.id} className="group hover:shadow-xl transition-shadow border-[#FFD700]/30 rounded-2xl overflow-hidden">
                   <div className="aspect-video overflow-hidden">
                     <img
-                      src={relatedPost.image}
-                      alt={relatedPost.title}
+                      src={post.image}
+                      alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <CardContent className="p-6">
-                    <div className="flex items-center space-x-2 text-sm text-gray-500 mb-2">
-                      <Calendar className="w-3 h-3" />
-                      <span>{new Date(relatedPost.date).toLocaleDateString()}</span>
-                      <Clock className="w-3 h-3 ml-2" />
-                      <span>{relatedPost.readTime}</span>
+                    <div className="flex items-center space-x-4 text-xs text-[#321414]/60 mb-3">
+                      <span>{post.category}</span>
+                      <span>{post.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
-                      {relatedPost.title}
+                    <h3 className="text-lg font-semibold text-[#321414] mb-2 group-hover:text-[#FF5722] transition-colors line-clamp-2">
+                      {post.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{relatedPost.excerpt}</p>
-                    <div className="flex justify-between items-center">
-                      <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded-full">
-                        {relatedPost.category}
-                      </span>
-                      <Link href={`/blog/${relatedPost.slug}`}>
-                        <Button size="sm" variant="outline" className="text-orange-600 border-orange-600 hover:bg-orange-50">
-                          Read More
-                        </Button>
-                      </Link>
-                    </div>
+                    <p className="text-[#321414]/80 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
+                    <Link href={`/blog/${post.slug}`}>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="text-[#FF5722] border-[#FF5722] hover:bg-[#FFEBD5] hover:text-[#E64A19] rounded-lg"
+                      >
+                        Read Article
+
+                        {/* <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" /> */}
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}

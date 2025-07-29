@@ -36,36 +36,10 @@ const achievements = [
 
 export default function AchievementsSection() {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-[#FFF5E6] to-[#FFE8CC] overflow-hidden">
-      {/* Cosmic background elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-10 left-10 text-[#FF9933] text-6xl animate-pulse">✧</div>
-        <div className="absolute bottom-10 right-10 text-[#FF9933] text-6xl animate-pulse">✦</div>
-      </div>
-      
-      {/* Golden top border */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent"></div>
-
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-8 z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border-2 border-[#FF5722]/50 shadow-md mb-6 mx-auto">
-            <Sparkles className="w-6 h-6 text-[#321414]" />
-            <span className="ml-3 text-lg font-bold text-[#321414]">Cosmic Milestones</span>
-          </div>
-          
-          <h2 className="text-2xl sm:text-4xl font-bold text-[#321414] mb-6">
-            Divine Achievements
-          </h2>
-          
-          <p className="text-xl text-[#321414]/90 max-w-2xl mx-auto">
-            Decades of guiding souls with authentic Vedic wisdom.
-          </p>
-        </div>
-
-        {/* Single Card Layout */}
+    <section className="relative px-16 py-14 bg-[#FFF5E6] overflow-hidden">
+      <div> 
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border-2 border-[#FF9933]/30 p-12">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {achievements.map((achievement, index) => {
               const IconComponent = achievement.icon;
               
