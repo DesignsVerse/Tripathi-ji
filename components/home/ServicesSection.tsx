@@ -50,7 +50,7 @@ export default function ServicesSection() {
               key={service.id} 
               className="group relative overflow-hidden rounded-2xl shadow-lg border border-[#FF9933]/20 hover:border-[#FF5722]/40 transition-all duration-300 bg-white/90 hover:bg-white flex flex-col"
             >
-              <div className="absolute -inset-px bg-gradient-to-br from-[#FFD700] to-[#FF5722] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+              <div className="absolute -inset-px  rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
               
               <div className="relative flex flex-col h-full">
                 <div className="aspect-video overflow-hidden">
