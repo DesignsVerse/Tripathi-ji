@@ -26,7 +26,7 @@ export default function BlogSection() {
   }, [carouselApi]);
 
   return (
-    <section className="relative py-20 md:py-24 bg-white overflow-hidden">
+    <section className="relative py-20 md:py-24 bg-[#FFF9F2] overflow-hidden">
       {/* Cosmic background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-12 left-12 text-[#FF9933] text-6xl md:text-7xl animate-pulse">✧</div>

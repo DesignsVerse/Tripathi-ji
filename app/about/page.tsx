@@ -8,7 +8,7 @@ import { Star, Award, Users, Clock, BookOpen, Heart, Shield, Target, Sparkles, G
 export default function AboutPage() {
   const achievements = [
     { icon: Users, number: '5000+', label: 'Happy Clients' },
-    { icon: Clock, number: '20+', label: 'Years Experience' },
+    { icon: Clock, number: '20+', label: 'Years of Legacy' },
     { icon: BookOpen, number: '10000+', label: 'Kundli Analyzed' },
     { icon: Award, number: '99%', label: 'Success Rate' },
   ];
@@ -17,18 +17,29 @@ export default function AboutPage() {
     {
       icon: Heart,
       title: 'Compassionate Guidance',
-      description: 'Empathetic consultations recognizing each journey as sacred'
+      description: 'Empathetic consultations that honor the sacredness of each individual’s journey.'
     },
     {
       icon: Shield,
       title: 'Authentic Wisdom',
-      description: 'Rooted in traditional Vedic astrology passed through generations'
+      description: 'Rooted in the timeless legacy of Vedic & KP astrology, passed down through generations.'
     },
     {
       icon: Target,
       title: 'Practical Solutions',
-      description: 'Actionable insights for real transformation in daily life'
+      description: 'Offering clear insights and actionable remedies for real-world transformation and balance.'
     },
+  ];
+
+  const specializations = [
+    'Vedic Astrology', 
+    'KP Astrology', 
+    'Kundali Milan (Matchmaking)', 
+    'Career & Business Guidance', 
+    'Gemstone Recommendations', 
+    'Muhurat Selection',
+    'Prashna Jyotish (Horary)',
+    'Astrological Remedies & Upay'
   ];
 
   return (
@@ -37,7 +48,6 @@ export default function AboutPage() {
       <main>
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FFEBD5] to-[#FFF5EB] overflow-hidden">
-          {/* Cosmic elements */}
           <Sparkles className="absolute top-20 left-20 w-8 h-8 text-[#FF9933]/30 animate-pulse" />
           <Star className="absolute bottom-20 right-20 w-8 h-8 text-[#FF9933]/30 animate-spin-slow" />
           
@@ -46,25 +56,25 @@ export default function AboutPage() {
               <div className="space-y-6">
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/30 shadow-md mb-6">
                   <Sparkles className="w-5 h-5 text-[#321414]" />
-                  <span className="ml-2 text-sm font-bold text-[#321414]">Vedic Astrologer</span>
+                  <span className="ml-2 text-sm font-bold text-[#321414]">Vedic & KP Astrologer in Ujjain</span>
                 </div>
                 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#321414] leading-tight">
-                  Meet <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FF9933]">Pandit Tripathi</span>
+                  Meet <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FF9933]">Abhishek Tripathi</span>
                 </h1>
                 
                 <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed">
-                  A beacon of ancient wisdom guiding souls toward their true purpose through sacred Vedic sciences.
+                  Carrying forward a sacred astrological legacy in Ujjain, guiding souls with wisdom inherited from his father & guru, Pandit R.K. Tripathi Ji.
                 </p>
 
                 <div className="flex flex-wrap gap-4">
                   <div className="flex items-center space-x-2 text-[#FF5722]">
                     <Star className="w-5 h-5 fill-current" />
-                    <span className="font-medium">Master Astrologer</span>
+                    <span className="font-medium">Vedic & KP Astrology Expert</span>
                   </div>
                   <div className="flex items-center space-x-2 text-[#FF5722]">
                     <Award className="w-5 h-5" />
-                    <span className="font-medium">20+ Years Experience</span>
+                    <span className="font-medium">Trusted Family Legacy</span>
                   </div>
                 </div>
 
@@ -80,13 +90,12 @@ export default function AboutPage() {
                 <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
                   <img
                     src="/astrologer-profile.jpg"
-                    alt="Pandit Tripathi"
+                    alt="Astrologer Abhishek Tripathi in Ujjain providing vedic astrology consultation"
                     className="w-full h-[500px] object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#321414]/40 to-transparent" />
                 </div>
                 
-                {/* Floating elements */}
                 <div className="absolute -bottom-4 -left-4 bg-white p-3 rounded-lg shadow-lg border border-[#FFD700] z-20">
                   <div className="flex items-center">
                     <Gem className="w-6 h-6 text-[#FF5722]" />
@@ -98,31 +107,26 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Journey Section */}
+        {/* Journey Section - ENHANCED & CORRECTED */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
               <div className="space-y-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#321414] mb-6">
-                  Spiritual <span className="text-[#FF5722]">Journey</span>
+                  A Legacy of <span className="text-[#FF5722]">Spiritual Wisdom</span>
                 </h2>
                 
                 <div className="space-y-6 text-[#321414]/90 leading-relaxed">
                   <p>
-                    Born into a lineage of Vedic scholars in Varanasi, Pandit Tripathi was initiated into 
-                    Jyotish Shastra at age 12. His grandfather, a renowned astrologer, recognized his 
-                    spiritual inclination and began his training in the sacred texts.
+                    The journey of Abhishek Tripathi is a continuation of a sacred heritage. He follows in the revered footsteps of his late father and guru, <strong>Pandit Shri R.K. Tripathi Ji</strong>, a name synonymous with astrological wisdom and spiritual guidance in the holy city of Ujjain.
                   </p>
                   
                   <p>
-                    Over two decades, he mastered Vedic astrology under various gurus across India, 
-                    combining traditional knowledge with modern applicability. His approach makes cosmic 
-                    wisdom accessible to contemporary seekers without diluting its profundity.
+                    Nurtured under his father's direct mentorship at the renowned <strong>R.K. Tripathi Jyotish Kendra</strong>, Abhishek ji was immersed in the profound principles of both Vedic and KP Astrology. His unique approach merges timeless traditions with a practical, modern perspective, making cosmic guidance relevant for today's challenges.
                   </p>
                   
                   <p>
-                    Panditji believes astrology should illuminate paths, not create fear. His consultations 
-                    blend accuracy with compassion, offering practical remedies that transform lives.
+                    Operating with the divine blessings of <strong>Shri Mahakaleshwar Jyotirlinga</strong>, his practice is founded on a deep commitment to truth and ethical counsel. He believes astrology is a tool for empowerment—a light to illuminate one's path, not to instill fear.
                   </p>
                 </div>
               </div>
@@ -132,24 +136,24 @@ export default function AboutPage() {
                   <CardContent className="p-0">
                     <h3 className="text-2xl font-bold text-[#321414] mb-4 flex items-center">
                       <Scroll className="w-6 h-6 text-[#FF5722] mr-2" />
-                      Education
+                      Our Foundation
                     </h3>
                     <ul className="space-y-3 text-[#321414]/90">
                       <li className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Masters in Vedic Astrology, Sanskrit University</span>
+                        <span>Inherited wisdom from a renowned astrological lineage.</span>
                       </li>
                       <li className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Advanced Palmistry & Numerology Certification</span>
+                        <span>Practice centered in the spiritual city of Ujjain.</span>
                       </li>
                       <li className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Gemstone Therapy Specialist</span>
+                        <span>Expertise in both traditional Vedic and modern KP systems.</span>
                       </li>
                       <li className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-[#FF5722] rounded-full mt-2 flex-shrink-0"></div>
-                        <span>Certified Vastu Consultant</span>
+                        <span>Commitment to ethical, truthful, and practical guidance.</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -159,12 +163,11 @@ export default function AboutPage() {
                   <CardContent className="p-0">
                     <h3 className="text-2xl font-bold text-[#321414] mb-4 flex items-center">
                       <Target className="w-6 h-6 text-[#FF5722] mr-2" />
-                      Specializations
+                      Our Astrological Services
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {['Kundli Analysis', 'Career Guidance', 'Marriage Compatibility', 
-                        'Gemstone Therapy', 'Vastu Shastra', 'Numerology'].map((item) => (
-                        <span key={item} className="text-sm bg-[#FFEBD5] text-[#FF5722] px-3 py-1.5 rounded-full">
+                      {specializations.map((item) => (
+                        <span key={item} className="text-sm bg-[#FFEBD5] text-[#FF5722] px-3 py-1.5 rounded-full font-medium">
                           {item}
                         </span>
                       ))}
@@ -181,10 +184,10 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 md:mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-[#321414] mb-4">
-                Two Decades of <span className="text-[#FF5722]">Spiritual Service</span>
+                A Legacy of <span className="text-[#FF5722]">Trust in Ujjain</span>
               </h2>
               <p className="text-lg text-[#321414]/90 max-w-3xl mx-auto">
-                Our authentic Vedic guidance has brought clarity and transformation to seekers worldwide
+                Our authentic Vedic guidance has brought clarity and transformation to thousands of seekers worldwide.
               </p>
             </div>
 
@@ -218,7 +221,7 @@ export default function AboutPage() {
                 Our <span className="text-[#FF5722]">Core Values</span>
               </h2>
               <p className="text-lg text-[#321414]/90 max-w-3xl mx-auto">
-                Principles that guide our spiritual counseling and astrological practice
+                Principles that guide our spiritual counseling and astrological practice.
               </p>
             </div>
 
@@ -248,7 +251,6 @@ export default function AboutPage() {
 
         {/* Mission */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FF5722] to-[#FF9933] text-white overflow-hidden">
-          {/* Decorative elements */}
           <Sparkles className="absolute top-20 left-20 w-8 h-8 text-white/20" />
           <Star className="absolute bottom-20 right-20 w-8 h-8 text-white/20 animate-spin-slow" />
           
@@ -263,8 +265,7 @@ export default function AboutPage() {
             </h2>
             
             <p className="text-xl text-orange-100 leading-relaxed mb-8 max-w-3xl mx-auto">
-              "To bridge ancient Vedic wisdom with modern life, helping individuals discover their 
-              true purpose and live in harmony with their cosmic blueprint."
+              "To bridge ancient Vedic wisdom with modern life, helping you discover your true purpose and live in harmony with your cosmic blueprint."
             </p>
             
             <Button 
