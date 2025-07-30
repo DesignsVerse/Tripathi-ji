@@ -1,18 +1,22 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blog";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import SupportBox from "@/components/home/SupportBox";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, Tag, Star } from "lucide-react";
 import Link from "next/link";
 
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
 }
 
-export default function BlogDetailPage({ params }) {
+export default function BlogDetailPage({ params }: PageProps) {
   const post = blogPosts.find((p) => p.slug === params.slug);
   if (!post) notFound();
 
@@ -20,7 +24,6 @@ export default function BlogDetailPage({ params }) {
 
   return (
     <div className="bg-[#FFF9F2] min-h-screen">
-      <Header />
       <main>
         {/* Top Banner/Title */}
         <section className="w-full bg-gradient-to-b from-[#FFEBD5] to-[#FFF5EB] pt-5 pb-3 border-b border-[#FFD700]/30">
@@ -193,7 +196,6 @@ export default function BlogDetailPage({ params }) {
         </section>
       </main>
 
-      <Footer />
       <SupportBox />
 
       {/* Mobile sticky share bar */}

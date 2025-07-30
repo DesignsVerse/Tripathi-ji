@@ -26,7 +26,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <div className="bg-[#FFF9F2] min-h-screen flex flex-col">
-      <Header />
       <main className="flex-1 w-full">
         <div className="max-w-7xl mx-auto w-full px-4 py-12 grid grid-cols-1 lg:grid-cols-9 gap-10">
           {/* --- LEFT Side: Image + Content --- */}
@@ -153,7 +152,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
           </Button>
         </div>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

@@ -12,7 +12,6 @@ import { Sparkles, Star } from 'lucide-react';
 export default function HoroscopePage() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-[#FFF5E6] to-[#FFEFD5] py-16 md:py-20 overflow-hidden">
@@ -105,7 +104,6 @@ export default function HoroscopePage() {
           </div>
         </section>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

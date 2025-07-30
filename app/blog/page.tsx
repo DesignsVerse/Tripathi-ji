@@ -11,7 +11,6 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
-      <Header />
       <main>
         {/* Enhanced Hero Section */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FF9933]/10 via-white to-[#FF5722]/5 overflow-hidden">
@@ -167,7 +166,6 @@ export default function BlogPage() {
           </div>
         </section>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

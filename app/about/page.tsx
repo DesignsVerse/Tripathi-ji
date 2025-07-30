@@ -44,7 +44,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF9F2] to-white">
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FFEBD5] to-[#FFF5EB] overflow-hidden">
@@ -278,7 +277,6 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

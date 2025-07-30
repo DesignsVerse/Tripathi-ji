@@ -100,7 +100,6 @@ export default function SupportPage() {
 
   return (
     <div className="min-h-screen bg-[#FFF9F2]">
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-[#FFF5E6] to-[#FFEFD5] py-20 md:py-24 overflow-hidden">
@@ -283,7 +282,6 @@ export default function SupportPage() {
           </div>
         </section>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

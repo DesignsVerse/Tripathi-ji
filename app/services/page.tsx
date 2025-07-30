@@ -13,7 +13,6 @@ import {
 export default function ServicesPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-orange-50 to-white">
-      <Header />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 md:py-32 bg-gradient-to-br from-[#FF9933]/10 via-white to-[#FF5722]/5">
@@ -178,7 +177,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

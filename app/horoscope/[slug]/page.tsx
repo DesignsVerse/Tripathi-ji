@@ -23,7 +23,6 @@ export default function HoroscopeDetailPage({ params }: { params: { slug: string
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FFF9F0] to-[#FFF5E6]">
-      <Header />
       <main>
         {/* Hero Section */}
         <section className="relative py-12 md:py-16 lg:py-20 bg-gradient-to-br from-[#FFEFD5] via-[#FFF5E6] to-[#FFEFD5] overflow-hidden">
@@ -162,7 +161,6 @@ export default function HoroscopeDetailPage({ params }: { params: { slug: string
           </div>
         </section>
       </main>
-      <Footer />
       <SupportBox />
     </div>
   );

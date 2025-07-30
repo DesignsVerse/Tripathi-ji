@@ -9,12 +9,13 @@ import { Button } from "@/components/ui/button";
 // If you want an "active menu" highlight, use Next.js's usePathname hook.
 const navigation = [
   { name: "Home", href: "/", },
-  { name: "Panchang", href: "/panchang",  },
-  { name: "Services", href: "/services",  },
-  { name: "Horoscope", href: "/horoscope"},
-  { name: "Support", href: "/support"},
-  { name: "Blog", href: "/blog", },
   { name: "About", href: "/about",  },
+  { name: "Services", href: "/services",  },
+  { name: "Panchang", href: "/panchang",  },
+  { name: "Horoscope", href: "/horoscope"},
+  { name: "Blog", href: "/blog", },
+
+  { name: "Support", href: "/support"},
 ];
 
 export default function Header() {

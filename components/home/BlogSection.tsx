@@ -35,7 +35,6 @@ export default function BlogSection() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:12px_12px]"></div>
       </div>
       {/* Golden top border */}
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-[#FFD700] to-[#FF5722]"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Premium Section Header */}
         <div className="text-center mb-16">

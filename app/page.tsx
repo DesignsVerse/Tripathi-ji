@@ -12,7 +12,7 @@ import Footer from '@/components/layout/Footer';
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Header />
+     
       <main>
         <HeroSection />
         <ServicesSection />
@@ -23,7 +23,7 @@ export default function Home() {
         <CTASection />
         <FAQSection />
       </main>
-      <Footer />
+     
     </div>
   );
 }
