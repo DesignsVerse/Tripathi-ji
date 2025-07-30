@@ -36,7 +36,7 @@ export default function Header() {
               </div>
             </div>
             <div>
-              <h1 className="text-xl md:text-2xl font-bold text-[#321414] leading-tight drop-shadow-sm">Pandit Jyotishacharya</h1>
+              <h1 className="text-xl md:text-2xl font-bold text-[#321414] leading-tight drop-shadow-sm">Astro Abhishek Tripathi</h1>
               <p className="hidden sm:block text-xs text-[#321414] font-medium">Vedic Astrology & Numerology Expert</p>
             </div>
           </Link>
