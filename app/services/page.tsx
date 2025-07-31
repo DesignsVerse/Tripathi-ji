@@ -12,10 +12,10 @@ import {
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-orange-50 to-white">
+    <div className="min-h-screen flex flex-col bg-[#FFF2DF]">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 md:py-32 bg-gradient-to-br from-[#FF9933]/10 via-white to-[#FF5722]/5">
+        <section className="relative py-20 md:py-32 bg-[#FFF2DF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/40 shadow-lg mb-6">

@@ -101,17 +101,22 @@ export default function SupportPage() {
   return (
     <div className="min-h-screen bg-[#FFF9F2]">
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#FFF5E6] to-[#FFEFD5] py-20 md:py-24 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:12px_12px] opacity-10"></div>
-          <div className="absolute top-10 left-10 text-[#FF9933] text-5xl md:text-7xl animate-pulse">✧</div>
-          <div className="absolute bottom-10 right-10 text-[#FF9933] text-5xl md:text-7xl animate-pulse">✦</div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[#321414] mb-6">
-                How Can We Help You?
+        {/* Hero Section with updated look and original content */}
+        <section className="relative py-20 md:py-32 bg-[#FFF2DF]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/40 shadow-lg mb-6">
+                <Sparkles className="w-6 h-6 text-[#321414]" />
+                <span className="ml-2 text-base font-bold tracking-wide text-[#321414]">Guidance & Support</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FFD700]">
+                  How Can
+                  <span className="block md:inline text-[#321414]/80 font-normal"> We Help You?
+                  </span>
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 Whether you need spiritual guidance, have a question about our services, or require assistance, our team is here to support you with compassion and expertise.
               </p>
             </div>
@@ -178,7 +183,6 @@ export default function SupportPage() {
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Form fields remain the same */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-[#321414] mb-2">Full Name *</label>

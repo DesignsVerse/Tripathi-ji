@@ -56,7 +56,7 @@ export default function HeroSection() {
                 </span>
               </h1>
               
-              <p className="text-sm sm:text-lg md:text-xl text-[#321414]/90 leading-relaxed font-medium max-w-lg">
+              <p className="text-sm sm:text-lg px-2 text-[#321414]/90 leading-relaxed  max-w-lg">
                 Inheriting the sacred legacy of his father, Pandit R.K. Tripathi Ji, Abhishek Tripathi guides you with profound insights from Vedic & KP Astrology to unlock your true potential.
               </p>
             </div>

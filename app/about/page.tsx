@@ -46,24 +46,29 @@ export default function AboutPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#FFF9F2] to-white">
       <main>
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FFEBD5] to-[#FFF5EB] overflow-hidden">
+        <section className="relative py-16 md:py-10 bg-gradient-to-br from-[#FFEBD5] to-[#FFF5EB] overflow-hidden">
           <Sparkles className="absolute top-20 left-20 w-8 h-8 text-[#FF9933]/30 animate-pulse" />
           <Star className="absolute bottom-20 right-20 w-8 h-8 text-[#FF9933]/30 animate-spin-slow" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/30 shadow-md mb-6">
+                <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/30 shadow-md ">
                   <Sparkles className="w-5 h-5 text-[#321414]" />
-                  <span className="ml-2 text-sm font-bold text-[#321414]">Vedic & KP Astrologer in Ujjain</span>
+                  <span className=" text-sm font-bold text-[#321414]">Vedic & KP Astrologer in Ujjain</span>
                 </div>
                 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#321414] leading-tight">
                   Meet <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FF9933]">Abhishek Tripathi</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed">
-                  Carrying forward a sacred astrological legacy in Ujjain, guiding souls with wisdom inherited from his father & guru, Pandit R.K. Tripathi Ji.
+                <p className="text-m text-justify md:text-m text-[#321414]/90 leading-relaxed">
+                Abhishek Tripathi Vedic astrologer, proudly carrying forward the legacy of his late father, Pandit Shri R.K. Tripathi Ji — a distinguished astrologer, revered teacher, and spiritual guide based in Ujjain.
+
+With blessings from his guru-father and the divine energy of Shri Mahakaleshwar Jyotirlinga, Abhishek ji continues the sacred tradition of astrology through R.K. Tripathi Jyotish Kendra, offering trusted guidance in Vedic Astrology, KP Astrology, Kundali Matching, Career & Business Counseling, Muhurat Selection, Remedies, and Gemstone Suggestions.
+
+Known for his precise analysis and ethical practice, Abhishek ji blends ancient Jyotish knowledge with a practical, modern approach — helping individuals find clarity, direction, and purpose in life.
+
                 </p>
 
                 <div className="flex flex-wrap gap-4">

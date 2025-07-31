@@ -75,22 +75,24 @@ export default function PanchangPage() {
   return (
     <div className="min-h-screen bg-[#FFF5E6]">
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#FFF5E6] to-[#FFEFD5] py-16 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:12px_12px] opacity-10"></div>
-          <div className="absolute top-8 left-12 text-[#FF9933] text-5xl md:text-7xl animate-pulse">✧</div>
-          <div className="absolute bottom-8 right-12 text-[#FF9933] text-5xl md:text-7xl animate-pulse">✦</div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border-2 border-[#FF5722]/50 shadow-lg mb-6">
-              <Sparkles className="w-5 h-5 text-[#321414]" />
-              <span className="ml-3 text-base md:text-lg font-bold text-[#321414]">Vedic Panchang</span>
+        {/* Hero Section with updated look and original content */}
+        <section className="relative py-20 md:py-32 bg-[#FFF2DF]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/40 shadow-lg mb-6">
+                <Sparkles className="w-6 h-6 text-[#321414]" />
+                <span className="ml-2 text-base font-bold tracking-wide text-[#321414]">Vedic Panchang</span>
+              </div>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FFD700]">
+                  Daily Panchang
+                </span>{" "}
+                <span className="block md:inline text-[#321414]/80 font-normal">{panchangData.date}</span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                Explore the cosmic energies of today with our Vedic Panchang, offering insights into Nakshatras, Tithis, Karanas, Yogas, and more to guide your day.
+              </p>
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-[#321414] mb-4">
-              Daily Panchang: {panchangData.date}
-            </h1>
-            <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed max-w-3xl mx-auto">
-              Explore the cosmic energies of today with our Vedic Panchang, offering insights into Nakshatras, Tithis, Karanas, Yogas, and more to guide your day.
-            </p>
           </div>
         </section>
 
@@ -255,8 +257,8 @@ export default function PanchangPage() {
             <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Book a personalized consultation to understand how today’s Panchang influences your life and decisions.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-[#FF5722] hover:bg-[#FFEFD5] font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
             >
               Book Consultation

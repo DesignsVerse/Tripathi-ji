@@ -1,3 +1,4 @@
+"use client";
 import { blogPosts } from '@/data/blog';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -7,52 +8,33 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight, Calendar, User, Clock, Search, Star, Sparkles, BookOpen } from 'lucide-react';
 
-export default function BlogPage() {
 
+export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       <main>
-        {/* Enhanced Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FF9933]/10 via-white to-[#FF5722]/5 overflow-hidden">
-          {/* Cosmic decorative elements */}
-          <div className="absolute inset-0 overflow-hidden opacity-20">
-            <Sparkles className="absolute top-20 left-1/4 w-8 h-8 text-[#FF5722] animate-pulse" />
-            <Star className="absolute bottom-1/3 right-20 w-6 h-6 text-[#FFD700] animate-spin-slow" />
-          </div>
-          
+        {/* Hero Section from ServicesPage */}
+        <section className="relative py-20 md:py-32 bg-[#FFF2DF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/30 shadow-md mb-6">
-                <BookOpen className="w-5 h-5 text-[#321414]" />
-                <span className="ml-2 text-sm font-bold text-[#321414]">Cosmic Wisdom</span>
+            <div className="text-center max-w-3xl mx-auto">
+              <div className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/40 shadow-lg mb-6">
+                <Sparkles className="w-6 h-6 text-[#321414]" />
+                <span className="ml-2 text-base font-bold tracking-wide text-[#321414]">Vedic Wisdom, Modern Guidance</span>
               </div>
-              
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FFD700]">
-                  Astrological Insights
-                </span>
+                  Divine Services
+                </span>{" "}
+                <span className="block md:inline text-[#321414]/80 font-normal">for Your Spiritual Journey</span>
               </h1>
-              
-              <p className="text-base md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-8">
-                Explore Vedic astrology through our articles and spiritual insights to enhance your cosmic understanding.
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+                Experience clarity, peace, and success with personalized astrological sessions.
               </p>
-              
-              {/* Enhanced Search Bar */}
-              <div className="relative max-w-lg mx-auto">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-base"
-                />
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Blog Posts Grid - 2 columns on mobile */}
+        {/* Blog Posts Grid */}
         <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-8 md:mb-12 text-center md:text-left">
@@ -68,7 +50,6 @@ export default function BlogPage() {
                   key={post.id} 
                   className="group hover:shadow-lg transition-all duration-300 overflow-hidden bg-white border-0 shadow-sm hover:shadow-orange-100"
                 >
-                  {/* Gradient accent */}
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#FFD700] via-[#FF5722] to-[#FF9933]" />
                   
                   <div className="aspect-square md:aspect-video overflow-hidden relative">
@@ -127,7 +108,6 @@ export default function BlogPage() {
 
         {/* Enhanced Newsletter Signup */}
         <section className="relative py-16 md:py-24 bg-gradient-to-br from-[#FF5722] to-[#FF9933] text-white overflow-hidden">
-          {/* Decorative elements */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
             <Sparkles className="absolute top-1/4 left-1/4 w-8 h-8 text-white" />
             <Star className="absolute bottom-1/3 right-1/3 w-6 h-6 text-white" />
@@ -153,7 +133,7 @@ export default function BlogPage() {
                 className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-300 text-sm md:text-base"
               />
               <Button 
-                size="sm"
+                size="lg"
                 className="bg-white text-orange-600 hover:bg-orange-50 px-6 py-3 text-sm md:text-base font-medium"
               >
                 Subscribe

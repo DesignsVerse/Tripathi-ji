@@ -11,23 +11,32 @@ import { Sparkles, Star } from 'lucide-react';
 
 export default function HoroscopePage() {
   return (
-    <div className="min-h-screen bg-[#FFF5E6]">
+    <div className="min-h-screen bg-[#FFF2DF]">
       <main>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#FFF5E6] to-[#FFEFD5] py-16 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:12px_12px] opacity-10"></div>
-          <div className="absolute top-10 left-10 text-[#FF9933] text-5xl md:text-7xl animate-pulse">✧</div>
-          <div className="absolute bottom-10 right-10 text-[#FF9933] text-5xl md:text-7xl animate-pulse">✦</div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center px-5 py-3 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border-2 border-[#FF5722]/50 shadow-lg mb-6">
+        {/* Hero Section styled like Blog Page */}
+        <section className="relative py-16 md:py-24 bg-[#FFF2DF] overflow-hidden">
+          {/* Cosmic decorative elements */}
+          <div className="absolute inset-0 overflow-hidden opacity-20">
+            <Sparkles className="absolute top-20 left-1/4 w-8 h-8 text-[#FF5722] animate-pulse" />
+            <Star className="absolute bottom-1/3 right-20 w-6 h-6 text-[#FFD700] animate-spin-slow" />
+          </div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center max-w-4xl mx-auto">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#FFD700] to-[#FF9933] rounded-full border border-[#FF5722]/30 shadow-md mb-6">
                 <Sparkles className="w-5 h-5 text-[#321414]" />
-                <span className="ml-3 text-base md:text-lg font-bold text-[#321414]">Your Cosmic Path</span>
+                <span className="ml-2 text-sm font-bold text-[#321414]">Your Cosmic Path</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-[#321414] mb-6">
-                Discover Your Horoscope
+              
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#FF5722] to-[#FFD700]">
+                  Discover Your
+                  <span className="block md:inline text-[#321414]/80 font-normal"> Horoscope</span>
+                  
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-[#321414]/90 leading-relaxed">
+              
+              <p className="text-base md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
                 Explore the wisdom of the stars with our Vedic horoscope insights for all 12 zodiac signs.
               </p>
             </div>

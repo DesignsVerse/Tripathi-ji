@@ -117,7 +117,7 @@ export interface Horoscope {
       id: "5",
       name: "Leo",
       slug: "leo",
-      image: "https://images.pexels.com/photos/1054285/pexels-photo-1054285.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/5.png",
       shortDesc: "Confident and charismatic, Leo shines with natural leadership.",
       dateRange: "July 23 - August 22",
       sections: [
@@ -143,7 +143,7 @@ export interface Horoscope {
       id: "6",
       name: "Virgo",
       slug: "virgo",
-      image: "https://images.pexels.com/photos/1054284/pexels-photo-1054284.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/6.png",
       shortDesc: "Practical and analytical, Virgo excels in precision and service.",
       dateRange: "August 23 - September 22",
       sections: [
@@ -169,7 +169,7 @@ export interface Horoscope {
       id: "7",
       name: "Libra",
       slug: "libra",
-      image: "https://images.pexels.com/photos/1054283/pexels-photo-1054283.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/7.png",
       shortDesc: "Harmonious and diplomatic, Libra seeks balance and beauty.",
       dateRange: "September 23 - October 22",
       sections: [
@@ -195,7 +195,7 @@ export interface Horoscope {
       id: "8",
       name: "Scorpio",
       slug: "scorpio",
-      image: "https://images.pexels.com/photos/1054282/pexels-photo-1054282.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/8.png",
       shortDesc: "Intense and passionate, Scorpio seeks depth and transformation.",
       dateRange: "October 23 - November 21",
       sections: [
@@ -221,7 +221,7 @@ export interface Horoscope {
       id: "9",
       name: "Sagittarius",
       slug: "sagittarius",
-      image: "https://images.pexels.com/photos/1054281/pexels-photo-1054281.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/9.png",
       shortDesc: "Adventurous and optimistic, Sagittarius loves exploration and freedom.",
       dateRange: "November 22 - December 21",
       sections: [
@@ -247,7 +247,7 @@ export interface Horoscope {
       id: "10",
       name: "Capricorn",
       slug: "capricorn",
-      image: "https://images.pexels.com/photos/1054280/pexels-photo-1054280.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/10.png",
       shortDesc: "Disciplined and ambitious, Capricorn strives for success and stability.",
       dateRange: "December 22 - January 19",
       sections: [
@@ -273,7 +273,7 @@ export interface Horoscope {
       id: "11",
       name: "Aquarius",
       slug: "aquarius",
-      image: "https://images.pexels.com/photos/1054279/pexels-photo-1054279.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/11.png",
       shortDesc: "Innovative and independent, Aquarius embraces uniqueness and progress.",
       dateRange: "January 20 - February 18",
       sections: [
@@ -299,7 +299,7 @@ export interface Horoscope {
       id: "12",
       name: "Pisces",
       slug: "pisces",
-      image: "https://images.pexels.com/photos/1054278/pexels-photo-1054278.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image: "/horoscop/12.png",
       shortDesc: "Dreamy and compassionate, Pisces is deeply intuitive and creative.",
       dateRange: "February 19 - March 20",
       sections: [
