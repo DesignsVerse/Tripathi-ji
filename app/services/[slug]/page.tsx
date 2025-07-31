@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import SupportBox from '@/components/home/SupportBox';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Star, Check, Phone, Mail } from 'lucide-react';
+import { ArrowLeft, Star, Check, Phone, Mail,Infinity, BookOpen, Zap, ScrollText, Home, BrainCircuit, CalendarCheck, Gem, ShieldAlert, Compass, Hash, Hand, HelpCircle, Flame, Moon, Heart, Target } from 'lucide-react';
 import Link from 'next/link';
 
 interface PageProps {
@@ -25,134 +25,170 @@ export default function ServiceDetailPage({ params }: PageProps) {
   const relatedServices = services.filter(s => s.id !== service.id).slice(0, 3);
 
   return (
-    <div className="bg-[#FFF9F2] min-h-screen flex flex-col">
-      <main className="flex-1 w-full">
-        <div className="max-w-7xl mx-auto w-full px-4 py-12 grid grid-cols-1 lg:grid-cols-9 gap-10">
-          {/* --- LEFT Side: Image + Content --- */}
-          <div className="lg:col-span-6 flex flex-col">
-            {/* Service Image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg mb-8 aspect-video w-full bg-[#FFEBD5]">
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            {/* Service Content */}
-            <div>
-              <Link
-                href="/services"
-                className="flex items-center gap-2 text-[#FF5722] hover:text-[#E64A19] text-sm mb-2"
-              >
-                <ArrowLeft className="h-4 w-4" /> All Services
-              </Link>
-              <div className="mb-3 flex flex-wrap items-center gap-4">
-                <span className="text-4xl">{service.icon}</span>
-                <span className="flex items-center gap-1 mt-1">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-amber-50 to-white">
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-r from-amber-100 to-amber-50 py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <Link href="/services" className="inline-flex items-center text-amber-700 hover:text-amber-800 mb-6">
+              <ArrowLeft className="h-5 w-5 mr-2" />
+              Back to Services
+            </Link>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex-1">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                  {service.title}
+                </h1>
+                <p className="text-lg text-gray-600 mb-6 max-w-3xl">
+                  {service.description}
+                </p>
+                <div className="flex items-center gap-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-[#FFD700] fill-current" />
+                    <Star key={i} className="w-5 h-5 text-amber-400 fill-amber-400" />
                   ))}
-                </span>
+                  <span className="text-gray-700 font-medium">5.0 (120+ reviews)</span>
+                </div>
               </div>
-              <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-[#321414] mb-2 leading-tight">
-                {service.title}
-              </h1>
-              <p className="text-[#321414]/80 text-lg mb-5">{service.description}</p>
-              {/* Features as modern cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                {service.featureList.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-[#FFF5EB] rounded-xl p-4 shadow">
-                    <span className="bg-[#FFEBD5] rounded-full p-2 mt-1">
-                      <Check className="w-4 h-4 text-[#FF5722]" />
-                    </span>
-                    <span className="text-base text-[#321414]/90">{feature}</span>
-                  </div>
-                ))}
+              <div className="w-full md:w-80">
+                <img 
+                  alt={service.title}
+                  className="rounded-xl shadow-lg w-full h-auto object-cover"
+                />
               </div>
-              {service.contentSections?.map((sec, idx) => (
-                <div key={idx} className="mb-10">
-                  <h2 className="text-xl md:text-2xl font-bold text-[#321414] mb-2">{sec.heading}</h2>
-                  <p className="text-[#321414]/90 text-base">{sec.description}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Main Content */}
+        <section className="py-12 md:py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Left Content */}
+            <div className="lg:col-span-2">
+              {/* Features */}
+              
+
+              {/* Content Sections */}
+              {service.contentSections?.map((section, idx) => (
+                <div key={idx} className="mb-12">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">{section.heading}</h2>
+                  <p className="text-gray-600 leading-relaxed">{section.description}</p>
                 </div>
               ))}
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {service.featureList.map((feature, idx) => (
+                    <div key={idx} className="bg-white p-4 rounded-lg shadow-sm border border-amber-100 flex items-start gap-3">
+                      <div className="bg-amber-50 p-2 rounded-full">
+                        <Check className="w-5 h-5 text-amber-600" />
+                      </div>
+                      <p className="text-gray-700">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* FAQs */}
               {service.faqs?.length > 0 && (
-                <div className="mt-8">
-                  <h2 className="text-xl font-bold text-[#321414] mb-5">Frequently Asked Questions</h2>
-                  <div className="flex flex-col gap-4">
+                <div className="mb-12">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-4">
                     {service.faqs.map((faq, idx) => (
-                      <div key={idx} className="rounded-lg bg-white shadow p-4">
-                        <div className="font-semibold text-[#FF5722] mb-1">{faq.question}</div>
-                        <div className="text-[#321414]/80">{faq.answer}</div>
+                      <div key={idx} className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+                        <h3 className="font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                        <p className="text-gray-600">{faq.answer}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               )}
             </div>
-          </div>
-          {/* --- RIGHT Side: Booking/CTA Card (Sticky) --- */}
-          <aside className="lg:col-span-3 lg:sticky lg:top-24">
-            <Card className="rounded-2xl shadow-xl bg-white border-0 overflow-hidden">
-              <CardContent className="p-7">
-        
-                <h2 className="text-2xl font-bold text-[#321414] mb-2 text-center">{service.title}</h2>
-                <p className="text-[#321414]/70 text-sm mb-6 text-center">{service.description.slice(0, 90)}...</p>
-                <Button className="w-full bg-[#FF5722] hover:bg-[#E64A19] text-white rounded-md font-semibold mb-3 py-3 flex gap-2 items-center justify-center">
-                  <Phone className="w-4 h-4" /> Book Consultation
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-[#FF5722] text-[#FF5722] hover:bg-[#FFEBD5] font-semibold rounded-md py-3 flex gap-2 items-center justify-center"
-                >
-                  <Mail className="w-4 h-4" /> Ask a Question
-                </Button>
-                <div className="mt-6 text-xs text-[#321414]/70 text-center">
-                  Trusted by <span className="font-bold text-[#FF5722]">5,000+</span> clients.
-                </div>
-              </CardContent>
-            </Card>
-            {/* Optionally add related or promo cards */}
-          </aside>
-        </div>
-        {/* Related Services */}
-        <section className="bg-white py-14 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-xl md:text-2xl font-bold text-[#321414] mb-8 text-center">You Might Also Like</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {relatedServices.map(s => (
-                <Card key={s.id} className="rounded-xl group hover:shadow-lg border-0 transition-all duration-300">
-                  <div className="aspect-video rounded-t-xl overflow-hidden">
-                    <img src={s.image} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+
+            {/* Right Sidebar */}
+            <div className="lg:col-span-1">
+              <Card className="sticky top-24 shadow-lg border border-amber-100">
+                <CardContent className="p-6">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Book This Service</h3>
+                    <p className="text-gray-600">Starting from ₹{service.startingPrice}</p>
                   </div>
-                  <CardContent className="p-5">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-2xl">{s.icon}</span>
-                      <h3 className="font-semibold text-[#321414]">{s.title}</h3>
-                    </div>
-                    <div className="flex justify-between items-center mt-2">
-                      <Link href={`/services/${s.slug}`}>
-                        <Button size="sm" variant="outline" className="text-[#FF5722] border-[#FF5722] hover:bg-[#FFEBD5] rounded-md">
-                          Learn More
-                        </Button>
-                      </Link>
-                    </div>
+                  
+                  <Button className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white mb-4 py-3">
+                    <Phone className="w-5 h-5 mr-2" />
+                    Instant Consultation
+                  </Button>
+                  
+                  <Button variant="outline" className="w-full border-amber-300 text-amber-700 hover:bg-amber-50 py-3">
+                    <Mail className="w-5 h-5 mr-2" />
+                    Email Inquiry
+                  </Button>
+
+                  <div className="mt-6 pt-6 border-t border-amber-100">
+                    <h4 className="font-medium text-gray-900 mb-3">Service Includes:</h4>
+                    <ul className="space-y-2">
+                      {service.featureList.slice(0, 3).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-600">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="py-12 md:py-16 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
+              You May Also Like
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedServices.map(service => (
+                <Card key={service.id} className="group hover:shadow-lg transition-all duration-300 border border-gray-200 rounded-xl overflow-hidden">
+                  <div className="h-48 bg-gradient-to-r from-amber-100 to-amber-50 flex items-center justify-center relative">
+                    <div className="absolute inset-0 opacity-10 bg-[url('/assets/pattern.svg')]"></div>
+                    {/* <div className="relative z-10 p-4 bg-white rounded-full shadow-md border border-amber-200">
+                      {iconMap[service.slug] || <Star className="w-8 h-8 text-amber-500" />}
+                    </div> */}
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-lg font-bold text-gray-800 mb-2">{service.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">{service.description}</p>
+                    <Link href={`/services/${service.slug}`}>
+                      <Button variant="outline" className="w-full border-gray-300 text-gray-700 hover:bg-amber-50 hover:border-amber-300">
+                        View Details
+                        <BookOpen className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
         </section>
-        {/* Sticky mobile CTA */}
-        <div className="fixed xl:hidden bottom-0 left-0 right-0 bg-white z-30 border-t border-[#FFEBD5] flex px-4 py-3 gap-4 justify-between">
-          <Button variant="outline" size="sm" className="flex-1 text-[#FF5722] border-[#FF5722]">
-            Call Now
-          </Button>
-          <Button variant="default" size="sm" className="flex-1 bg-[#FF9933] text-white font-semibold">
-            Book Consultation
-          </Button>
-        </div>
       </main>
       <SupportBox />
     </div>
   );
 }
+
+const iconMap = {
+  'janm-patrika': <ScrollText className="w-8 h-8 text-blue-600" />,
+  'kundli-ghar-tak': <Home className="w-8 h-8 text-amber-600" />,
+  'falit-jyotish': <BrainCircuit className="w-8 h-8 text-purple-600" />,
+  'gemstone-astrology': <Gem className="w-8 h-8 text-emerald-600" />,
+  'dosha-yoga': <ShieldAlert className="w-8 h-8 text-red-600" />,
+  'vastu': <Compass className="w-8 h-8 text-teal-600" />,
+  'palmistry': <Hand className="w-8 h-8 text-pink-600" />,
+  'prashna': <HelpCircle className="w-8 h-8 text-indigo-600" />,
+  'kundli-milan': <Heart className="w-8 h-8 text-rose-600" />,
+  'kp-astrology': <Target className="w-8 h-8 text-orange-600" />,
+  'sadesati': <Moon className="w-8 h-8 text-violet-600" />,
+  'manglik': <Flame className="w-8 h-8 text-red-700" />,
+  'kaalsarp': <Infinity className="w-8 h-8 text-yellow-700" />,
+  'numerology': <Hash className="w-8 h-8 text-cyan-600" />,
+  'muhurat': <CalendarCheck className="w-8 h-8 text-green-600" />,
+};

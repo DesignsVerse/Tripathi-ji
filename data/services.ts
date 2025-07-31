@@ -1,302 +1,512 @@
 export const services = [
   {
     id: 1,
-    slug: "kp-astrology",
-    icon: "🔭",
-    title: "KP Astrology",
-    image: "/images/services/kp-astrology.jpg",
-    description: "Get highly accurate predictions using the Krishnamurti Paddhati (KP) system, known for its precision in timing and event analysis.",
+    slug: "janm-patrika",
+    title: "Janm Patrika Analysis",
+    description: "Detailed Janm Patrika analysis by Astro Abhishek Tripathi in Ujjain with 10+ year predictions for life success.",
+    startingPrice: 999,
     featureList: [
-      "Expert KP chart & sub-lord analysis",
-      "Event timing (marriage, job, property, etc.)",
-      "Cusp-wise planetary assessment",
-      "Practical, easy-to-follow remedies"
+      "Complete birth chart analysis",
+      "Planetary position assessment",
+      "10-year life predictions",
+      "Personalized remedies"
+    ],
+    contentSections: [
+      {
+        heading: "What is Janm Patrika?",
+        description: "Janm Patrika, or birth chart, is a cosmic map of your life based on your exact birth time, date, and location in Ujjain. Crafted by Astro Abhishek Tripathi in Ujjain, it reveals your personality, strengths, challenges, and destiny."
+      },
+      {
+        heading: "What You'll Receive",
+        description: "A thorough analysis of all 12 houses, planetary positions, dashas, and yogas, with personalized remedies. Astro Abhishek Tripathi in Ujjain provides 10-year predictions for career, finance, relationships, and health."
+      }
+    ],
+    faqs: [
+      {
+        question: "What information is required?",
+        answer: "Exact birth time, date, and place are needed for an accurate analysis by Astro Abhishek Tripathi in Ujjain."
+      },
+      {
+        question: "How long is the report?",
+        answer: "The report spans 15-20 pages, offering detailed insights and remedies."
+      }
+    ],
+    tags: ["birth-chart", "horoscope", "predictions", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 2,
+    slug: "kundli-ghar-tak",
+    title: "Kundli Ghar Tak",
+    description: "Premium printed Janm Patrika delivered to your doorstep by Astro Abhishek Tripathi in Ujjain.",
+    startingPrice: 1299,
+    featureList: [
+      "Professionally printed kundli",
+      "Express delivery",
+      "Detailed planetary analysis",
+      "Lifetime reference document"
+    ],
+    contentSections: [
+      {
+        heading: "About Printed Kundli",
+        description: "A premium-quality printed Janm Patrika on high-grade paper, prepared by Astro Abhishek Tripathi in Ujjain. Perfect for gifting or personal use, it includes comprehensive planetary details."
+      },
+      {
+        heading: "Delivery Information",
+        description: "Dispatched from Ujjain within 3 working days via premium courier. Delivery takes 3-7 days across India, ensuring your kundli arrives swiftly."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is framing available?",
+        answer: "Yes, framing is offered for an additional ₹500."
+      },
+      {
+        question: "Do I get a digital copy?",
+        answer: "A PDF version is emailed alongside the physical copy."
+      }
+    ],
+    tags: ["printed-kundli", "delivery", "birth-chart", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 3,
+    slug: "falit-jyotish",
+    title: "Falit Jyotish Consultation",
+    description: "Expert predictive astrology by Astro Abhishek Tripathi in Ujjain for life’s challenges.",
+    startingPrice: 799,
+    featureList: [
+      "Current planetary influences",
+      "Problem-specific analysis",
+      "Short-term predictions",
+      "Immediate remedies"
+    ],
+    contentSections: [
+      {
+        heading: "What is Falit Jyotish?",
+        description: "Falit Jyotish focuses on current planetary transits to address life’s challenges. Astro Abhishek Tripathi in Ujjain offers insights to guide your decisions."
+      },
+      {
+        heading: "Consultation Details",
+        description: "A 45-60 minute session with Astro Abhishek Tripathi in Ujjain, tailored to your concerns like career or relationships, with practical remedies."
+      }
+    ],
+    faqs: [
+      {
+        question: "How should I prepare?",
+        answer: "List your specific questions beforehand for a focused session with Astro Abhishek Tripathi in Ujjain."
+      },
+      {
+        question: "Can I record the session?",
+        answer: "Yes, audio recording is allowed for personal use."
+      }
+    ],
+    tags: ["predictions", "consultation", "problem-solving", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 4,
+    slug: "gemstone-astrology",
+    title: "Gemstone Astrology",
+    description: "Personalized gemstone recommendations by Astro Abhishek Tripathi in Ujjain for planetary balance.",
+    startingPrice: 1499,
+    featureList: [
+      "Planetary gemstone analysis",
+      "Authentic gem certification",
+      "Wearing method guidance",
+      "Follow-up consultation"
+    ],
+    contentSections: [
+      {
+        heading: "Gemstone Science",
+        description: "Gemstones channel cosmic energies to balance planetary influences. Astro Abhishek Tripathi in Ujjain recommends only natural, untreated stones."
+      },
+      {
+        heading: "Our Process",
+        description: "Astro Abhishek Tripathi in Ujjain analyzes your chart, assesses planetary needs, recommends certified gemstones, and provides consecration guidance."
+      }
+    ],
+    faqs: [
+      {
+        question: "How is gem authenticity verified?",
+        answer: "All gems come with certifications from recognized labs."
+      },
+      {
+        question: "What if the gemstone doesn’t suit me?",
+        answer: "A 15-day replacement policy is offered for any discomfort."
+      }
+    ],
+    tags: ["gemstones", "ratna", "planetary-remedy", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 5,
+    slug: "dosha-yoga",
+    title: "Dosha and Yoga Analysis",
+    description: "Identify and remedy doshas with Astro Abhishek Tripathi’s expertise in Ujjain.",
+    startingPrice: 899,
+    featureList: [
+      "Complete dosha identification",
+      "Impact analysis",
+      "Customized remedies",
+      "Follow-up support"
+    ],
+    contentSections: [
+      {
+        heading: "Understanding Doshas",
+        description: "Doshas are planetary combinations causing obstacles, like Mangal or Kaal Sarp. Astro Abhishek Tripathi in Ujjain identifies and remedies them."
+      },
+      {
+        heading: "Our Approach",
+        description: "Astro Abhishek Tripathi in Ujjain provides practical, culturally aligned remedies to mitigate doshas, tailored to your lifestyle."
+      }
+    ],
+    faqs: [
+      {
+        question: "How long do remedies take to work?",
+        answer: "Effects may begin within 40 days, with full results in 6 months to 2 years."
+      },
+      {
+        question: "Are all doshas harmful?",
+        answer: "Some doshas can indicate spiritual potential when managed correctly."
+      }
+    ],
+    tags: ["dosha", "remedies", "yoga", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 6,
+    slug: "vastu-consultation",
+    title: "Vastu Consultation",
+    description: "Optimize your space with Astro Abhishek Tripathi’s Vastu expertise in Ujjain.",
+    startingPrice: 1199,
+    featureList: [
+      "Detailed space analysis",
+      "Vastu-compliant recommendations",
+      "Energy flow optimization",
+      "Post-consultation support"
+    ],
+    contentSections: [
+      {
+        heading: "What is Vastu Shastra?",
+        description: "Vastu Shastra aligns your living or working space with cosmic energies for harmony. Astro Abhishek Tripathi in Ujjain ensures your space supports prosperity."
+      },
+      {
+        heading: "Consultation Process",
+        description: "Astro Abhishek Tripathi in Ujjain evaluates your space, identifies Vastu defects, and provides practical solutions to enhance energy flow and well-being."
+      }
+    ],
+    faqs: [
+      {
+        question: "Do I need to share a floor plan?",
+        answer: "Yes, a floor plan helps Astro Abhishek Tripathi in Ujjain provide accurate recommendations."
+      },
+      {
+        question: "Can Vastu be applied remotely?",
+        answer: "Yes, remote consultations are available with detailed guidance."
+      }
+    ],
+    tags: ["vastu", "space-harmony", "consultation", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 7,
+    slug: "palmistry-analysis",
+    title: "Palmistry Analysis",
+    description: "Unlock destiny insights with Astro Abhishek Tripathi’s palmistry in Ujjain.",
+    startingPrice: 699,
+    featureList: [
+      "Detailed palm reading",
+      "Life path insights",
+      "Major line analysis",
+      "Personalized guidance"
+    ],
+    contentSections: [
+      {
+        heading: "What is Palmistry?",
+        description: "Palmistry interprets hand lines and shapes to reveal your destiny. Astro Abhishek Tripathi in Ujjain provides deep insights into your life’s path."
+      },
+      {
+        heading: "What to Expect",
+        description: "Astro Abhishek Tripathi in Ujjain analyzes your palm’s heart, head, and life lines, offering guidance on career, relationships, and personal growth."
+      }
+    ],
+    faqs: [
+      {
+        question: "Do I need to visit in person?",
+        answer: "High-resolution palm images can be analyzed remotely by Astro Abhishek Tripathi in Ujjain."
+      },
+      {
+        question: "How accurate is palmistry?",
+        answer: "Accuracy depends on the reader’s expertise; Astro Abhishek Tripathi is highly skilled."
+      }
+    ],
+    tags: ["palmistry", "destiny", "hand-reading", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 8,
+    slug: "prashn-kundli",
+    title: "Prashn Kundli",
+    description: "Instant answers with Astro Abhishek Tripathi’s Prashn Kundli in Ujjain.",
+    startingPrice: 599,
+    featureList: [
+      "Question-based chart analysis",
+      "Immediate insights",
+      "Focused remedies",
+      "Quick consultation"
+    ],
+    contentSections: [
+      {
+        heading: "What is Prashn Kundli?",
+        description: "Prashn Kundli answers specific questions by casting a chart at the query’s time. Astro Abhishek Tripathi in Ujjain provides precise solutions."
+      },
+      {
+        heading: "How It Works",
+        description: "Ask a clear question, and Astro Abhishek Tripathi in Ujjain creates a chart to deliver instant insights and remedies for your concern."
+      }
+    ],
+    faqs: [
+      {
+        question: "What types of questions can I ask?",
+        answer: "Any specific concern, like job or marriage, can be addressed by Astro Abhishek Tripathi in Ujjain."
+      },
+      {
+        question: "How many questions can I ask?",
+        answer: "One question per session for focused analysis."
+      }
+    ],
+    tags: ["prashn-kundli", "instant-answers", "astrology", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 9,
+    slug: "kundli-milan",
+    title: "Kundli Milan",
+    description: "Ensure marital harmony with Astro Abhishek Tripathi’s Kundli Milan in Ujjain.",
+    startingPrice: 999,
+    featureList: [
+      "Ashtakoot matching",
+      "Dosha analysis",
+      "Compatibility report",
+      "Remedy suggestions"
+    ],
+    contentSections: [
+      {
+        heading: "What is Kundli Milan?",
+        description: "Kundli Milan assesses compatibility between partners for a harmonious marriage. Astro Abhishek Tripathi in Ujjain ensures accurate matching."
+      },
+      {
+        heading: "Our Process",
+        description: "Astro Abhishek Tripathi in Ujjain analyzes 36 gunas, identifies doshas like Manglik, and provides remedies for a successful marriage."
+      }
+    ],
+    faqs: [
+      {
+        question: "What if doshas are found?",
+        answer: "Astro Abhishek Tripathi in Ujjain offers remedies to mitigate doshas."
+      },
+      {
+        question: "How long does it take?",
+        answer: "The report is delivered within 2-3 days."
+      }
+    ],
+    tags: ["kundli-milan", "marriage-compatibility", "dosha", "ujjain", "astro-abhishek-tripathi"]
+  },
+  {
+    id: 10,
+    slug: "krishnamurti-paddhati",
+    title: "Krishnamurti Paddhati",
+    description: "Precise predictions with Astro Abhishek Tripathi’s KP astrology in Ujjain.",
+    startingPrice: 1099,
+    featureList: [
+      "Sub-lord analysis",
+      "Accurate predictions",
+      "Event timing",
+      "Remedy guidance"
     ],
     contentSections: [
       {
         heading: "What is KP Astrology?",
-        description: "KP Astrology is a modern approach within Vedic astrology that focuses on stellar constellations and sub-lords, offering unmatched accuracy for predictions. It’s trusted for clear answers regarding career, health, relationships, and more."
+        description: "Krishnamurti Paddhati (KP) uses stellar astrology for precise predictions. Astro Abhishek Tripathi in Ujjain masters this technique for accurate results."
       },
       {
-        heading: "Why This Service?",
-        description: "Our KP experts decode your chart using advanced tools, breaking down complex problems into actionable solutions. Suitable for urgent queries and those seeking time-specific outcomes."
+        heading: "What You'll Get",
+        description: "Astro Abhishek Tripathi in Ujjain provides detailed sub-lord analysis, event timing, and remedies for your specific concerns."
       }
     ],
     faqs: [
       {
-        question: "Is KP more accurate than basic Vedic astrology?",
-        answer: "KP is renowned for precise event timing and clarity, especially in complex or time-bound matters."
+        question: "How is KP different from traditional astrology?",
+        answer: "KP uses finer divisions for greater precision, as practiced by Astro Abhishek Tripathi in Ujjain."
       },
       {
-        question: "What details are needed?",
-        answer: "Birth date, time, place, and specific question for best results."
+        question: "What questions can KP answer?",
+        answer: "Any specific query, like job or health, can be addressed."
       }
     ],
-    tags: ["kp astrology", "sub-lord", "timing"]
+    tags: ["kp-astrology", "predictions", "stellar-astrology", "ujjain", "astro-abhishek-tripathi"]
   },
   {
-    id: 2,
-    slug: "vedic-astrology",
-    icon: "🪔",
-    title: "Vedic Astrology",
-    image: "/images/services/vedic-astrology.jpg",
- 
-    description: "Traditional full-spectrum birth chart analysis based on Vedic principles, for life path guidance and solutions.",
+    id: 11,
+    slug: "sadesati-report",
+    title: "Sadesati Report",
+    description: "Mitigate Saturn’s Sadesati with Astro Abhishek Tripathi in Ujjain.",
+    startingPrice: 799,
     featureList: [
-      "Personalized horoscope reading",
-      "Dasha & transit assessment",
-      "Life, career, relationships, health forecasts",
-      "Customized remedies (mantra, puja, etc.)"
+      "Sadesati phase analysis",
+      "Impact assessment",
+      "Tailored remedies",
+      "Follow-up guidance"
     ],
     contentSections: [
       {
-        heading: "What is Vedic Astrology?",
-        description: "Vedic astrology (Jyotish) analyzes planetary positions at your birth to reveal your life's trajectory, strengths, and likely challenges. Sessions cover all major life areas and upcoming periods."
+        heading: "What is Sadesati?",
+        description: "Sadesati is Saturn’s 7.5-year transit affecting life areas. Astro Abhishek Tripathi in Ujjain helps mitigate its challenges."
       },
       {
-        heading: "How Can It Help?",
-        description: "Discover hidden potentials, align your goals, and receive time-tested solutions to life’s roadblocks through Vedic wisdom."
+        heading: "Report Details",
+        description: "Astro Abhishek Tripathi in Ujjain provides a detailed report on Sadesati’s phases, impacts, and remedies to ease its effects."
       }
     ],
     faqs: [
       {
-        question: "What should I expect?",
-        answer: "Insightful reading with clear explanations, timelines, and spiritual remedies designed for you."
+        question: "How severe is Sadesati?",
+        answer: "Severity varies; Astro Abhishek Tripathi in Ujjain assesses its impact."
       },
       {
-        question: "Can I ask follow-up questions?",
-        answer: "Yes, follow-ups are encouraged for total clarity."
+        question: "What remedies are offered?",
+        answer: "Pujas, mantras, and charity are recommended."
       }
     ],
-    tags: ["vedic astrology", "horoscope", "dasha"]
+    tags: ["sadesati", "saturn-transit", "remedies", "ujjain", "astro-abhishek-tripathi"]
   },
   {
-    id: 3,
-    slug: "muhurat-selection",
-    icon: "🗓️",
-    title: "Muhurat Selection",
-    image: "/images/services/muhurat.jpg",
-   
-    description: "Find the most auspicious date and time for your important events: marriage, housewarming, travel, business, and more.",
+    id: 12,
+    slug: "manglik-dosha-report",
+    title: "Manglik Dosha Report",
+    description: "Neutralize Manglik dosha with Astro Abhishek Tripathi in Ujjain.",
+    startingPrice: 799,
     featureList: [
-      "Personalized auspicious timing",
-      "Vedic Muhurat calculation",
-      "Covers rituals, events, projects",
-      "Mitigates negative planetary effects"
+      "Manglik dosha analysis",
+      "Impact evaluation",
+      "Custom remedies",
+      "Marriage guidance"
     ],
     contentSections: [
       {
-        heading: "Why Muhurat Matters?",
-        description: "The right Muhurat empowers your life events, maximizing positive outcomes and preventing future obstacles. We use authentic Panchang and planetary positions for perfect selection."
+        heading: "What is Manglik Dosha?",
+        description: "Manglik Dosha, caused by Mars, can affect marriage. Astro Abhishek Tripathi in Ujjain identifies and neutralizes it."
       },
       {
-        heading: "Service Flow",
-        description: "Tell us your event details and location – receive a list of ideal dates/times with explanations and ritual advice included."
+        heading: "Our Approach",
+        description: "Astro Abhishek Tripathi in Ujjain analyzes Mars’ placement, assesses its impact, and provides remedies like pujas for harmony."
       }
     ],
     faqs: [
       {
-        question: "How soon will I get the Muhurat?",
-        answer: "Usually within 12 hours of receiving your event details."
+        question: "Can Manglik Dosha be fully removed?",
+        answer: "Astro Abhishek Tripathi in Ujjain offers remedies to significantly reduce its effects."
       },
       {
-        question: "Can you select for marriage, business, and housewarming?",
-        answer: "Yes, we offer muhurats for all major life events."
+        question: "Is it only about marriage?",
+        answer: "Primarily, but it can affect other life areas too."
       }
     ],
-    tags: ["muhurat", "timing", "ceremony"]
+    tags: ["manglik-dosha", "marriage", "remedies", "ujjain", "astro-abhishek-tripathi"]
   },
   {
-    id: 4,
-    slug: "kundali-milan",
-    icon: "💑",
-    title: "Kundali Milan (Matchmaking)",
-    image: "/images/services/kundali-milan.jpg",
-   
-    description: "Ensure harmony in love and marriage by matching charts for compatibility, Dosha analysis, and future predictions.",
+    id: 13,
+    slug: "kaalsarp-dosha-analysis",
+    title: "Kaalsarp Dosha Analysis",
+    description: "Overcome Kaalsarp dosha with Astro Abhishek Tripathi in Ujjain.",
+    startingPrice: 999,
     featureList: [
-      "Comprehensive Guna Milan",
-      "Manglik & Dosha check",
-      "Family, values, mindset compatibility",
-      "Outcome & suggestion report"
+      "Kaalsarp dosha identification",
+      "Impact analysis",
+      "Puja recommendations",
+      "Follow-up support"
     ],
     contentSections: [
       {
-        heading: "Why Kundali Matching?",
-        description: "Matching horoscopes (Kundali Milan) helps assess compatibility on physical, emotional, intellectual, and spiritual levels, reducing chances of marital issues."
+        heading: "What is Kaalsarp Dosha?",
+        description: "Kaalsarp Dosha occurs when planets are between Rahu and Ketu, causing obstacles. Astro Abhishek Tripathi in Ujjain provides solutions."
       },
       {
-        heading: "Report Includes",
-        description: "Guna score, Dosha impact, overall compatibility summary, and expert advice for challenged matches."
+        heading: "Our Expertise",
+        description: "Astro Abhishek Tripathi in Ujjain identifies the dosha’s type, assesses its effects, and recommends pujas for relief."
       }
     ],
     faqs: [
       {
-        question: "What details do I provide?",
-        answer: "Both charts: birth date, time, and place for both partners."
+        question: "How long does relief take?",
+        answer: "Pujas by Astro Abhishek Tripathi in Ujjain show effects within months."
       },
       {
-        question: "Is non-matching a dealbreaker?",
-        answer: "Not always! Remedies and guidance are provided for low scores."
+        question: "Is puja mandatory?",
+        answer: "Pujas are highly effective, but other remedies are also offered."
       }
     ],
-    tags: ["matchmaking", "kundali milan", "guna milan"]
+    tags: ["kaalsarp-dosha", "remedies", "puja", "ujjain", "astro-abhishek-tripathi"]
   },
   {
-    id: 5,
-    slug: "career-guidance",
-    icon: "💼",
-    title: "Career Guidance",
-    image: "/images/services/career.jpg",
-  
-    description: "Astrology-backed advice for career launch, success, switches, and business growth, with practical Vedic solutions.",
+    id: 14,
+    slug: "numerology-analysis",
+    title: "Numerology Analysis",
+    description: "Unlock your destiny with Astro Abhishek Tripathi’s numerology in Ujjain.",
+    startingPrice: 699,
     featureList: [
-      "Career/Business horoscope analysis",
-      "Timeline for promotion/job change",
-      "Success factors & blocks decoded",
-      "Education/business field suggestions"
+      "Number-based analysis",
+      "Life path insights",
+      "Name correction guidance",
+      "Personalized remedies"
     ],
     contentSections: [
       {
-        heading: "How Astrology Aids Career?",
-        description: "Get clarity on your professional strengths, ideal industries, periods of progress or caution, and practical remedies for obstacles."
+        heading: "What is Numerology?",
+        description: "Numerology uses numbers to reveal your destiny. Astro Abhishek Tripathi in Ujjain interprets your numbers for guidance."
       },
       {
-        heading: "When to Use This?",
-        description: "Confused about career path, planning a switch, or facing setbacks? This service guides on opportunities ahead and maximizes your potential."
+        heading: "What You'll Get",
+        description: "Astro Abhishek Tripathi in Ujjain analyzes your birth and name numbers, offering insights and name correction suggestions."
       }
     ],
     faqs: [
       {
-        question: "Can I ask about entrepreneurship?",
-        answer: "Yes! We guide students, professionals, and business owners alike."
+        question: "Can names be changed for luck?",
+        answer: "Astro Abhishek Tripathi in Ujjain suggests name tweaks for better vibrations."
       },
       {
-        question: "Will I get job timing?",
-        answer: "You receive time windows for likely job change, promotion, or business growth."
+        question: "What numbers are analyzed?",
+        answer: "Birth date and name numbers are key."
       }
     ],
-    tags: ["career", "business", "guidance"]
+    tags: ["numerology", "destiny", "name-correction", "ujjain", "astro-abhishek-tripathi"]
   },
   {
-    id: 6,
-    slug: "remedies-upay",
-    icon: "⚱️",
-    title: "Remedies & Upay",
-    image: "/images/services/remedies.jpg",
-  
-    description: "Powerful and practical Vedic remedies to neutralize negative influences, attract positivity, and improve results quickly.",
+    id: 15,
+    slug: "shubh-muhurat",
+    title: "Shubh Muhurat",
+    description: "Find auspicious timings with Astro Abhishek Tripathi in Ujjain.",
+    startingPrice: 499,
     featureList: [
-      "Personalized mantra & rituals",
-      "Gemstone, Yantra, charity advice",
-      "Easy daily Upay explained",
-      "Dosha & planetary pacification"
+      "Panchang analysis",
+      "Event-specific timings",
+      "Planetary alignment check",
+      "Quick delivery"
     ],
     contentSections: [
       {
-        heading: "What Are Upays?",
-        description: "Upay and Vedic remedies are time-honored solutions (mantra, ritual, color therapy, acts of charity, fasting) to counteract planetary doshas or life issues."
+        heading: "What is Shubh Muhurat?",
+        description: "Shubh Muhurat identifies auspicious times for events like weddings or business openings. Astro Abhishek Tripathi in Ujjain ensures success."
       },
       {
-        heading: "What’s Included?",
-        description: "Clear instructions, spiritual background, and do’s/don’ts. We only suggest remedies matching your belief and lifestyle."
+        heading: "Our Service",
+        description: "Astro Abhishek Tripathi in Ujjain analyzes the Panchang to provide precise timings for your important events."
       }
     ],
     faqs: [
       {
-        question: "Are gemstones necessary?",
-        answer: "Only if your chart truly demands; we recommend cost-effective solutions first."
+        question: "What events need Muhurat?",
+        answer: "Weddings, housewarmings, and business starts benefit from Muhurat."
       },
       {
-        question: "Can I do home remedies?",
-        answer: "Absolutely, most are daily-practice and do not require expensive pujas."
+        question: "How far in advance can I get it?",
+        answer: "Astro Abhishek Tripathi in Ujjain can provide Muhurats for up to a year."
       }
     ],
-    tags: ["remedy", "upay", "dosha"]
-  },
-  {
-    id: 7,
-    slug: "gemstone-recommendations",
-    icon: "💎",
-    title: "Gemstone Recommendations",
-    image: "/images/services/gemstone.jpg",
-    
-    description: "Discover which gemstones truly benefit you, and learn how, when, and why to wear them as per Vedic astrology.",
-    featureList: [
-      "Chart-based gemstone advice",
-      "Natural, untreated gems only",
-      "Mantra & ritual for activation",
-      "Cautions for inauspicious gems"
-    ],
-    contentSections: [
-      {
-        heading: "Why Gemstones?",
-        description: "A well-chosen gemstone strengthens auspicious planets and shields against trouble. We only suggest stones truly suited to your chart."
-      },
-      {
-        heading: "Service Details",
-        description: "Get clarity on recommended stone, carat, wearing instructions, when to avoid gems, and how to energize them for effectiveness."
-      }
-    ],
-    faqs: [
-      {
-        question: "Will I be sold a gemstone?",
-        answer: "No, this is guidance only. We are not affiliated with sellers."
-      },
-      {
-        question: "Can I wear multiple stones?",
-        answer: "Only if your kundli supports it—our report helps you avoid harmful combinations."
-      }
-    ],
-    tags: ["gemstone", "recommendation", "planetary"]
-  },
-  {
-    id: 8,
-    slug: "prashna-jyotish",
-    icon: "🧿",
-    title: "Prashna Jyotish (Horary Astrology)",
-    image: "/images/services/prashna.jpg",
-  
-    description: "Ask one pressing question—get precise, astrological guidance even if your birth details are incomplete.",
-    featureList: [
-      "One-question answer (love, career, etc.)",
-      "Horary chart cast for question time",
-      "Straightforward, practical advice",
-      "Quick turnaround for urgent issues"
-    ],
-    contentSections: [
-      {
-        heading: "What is Prashna Jyotish?",
-        description: "Horary astrology (Prashna) answers your immediate concerns based on the exact time & place when a question arises—perfect for cases without a complete birth chart."
-      },
-      {
-        heading: "When to Use This?",
-        description: "For urgent or time-sensitive matters—relationships, lost items, career, travel—ask one clear question and get a direct answer."
-      }
-    ],
-    faqs: [
-      {
-        question: "What if my birth time is unknown?",
-        answer: "Prashna is ideal in such cases—you just need a serious, focused question."
-      },
-      {
-        question: "How quickly can I ask?",
-        answer: "Book, state the question, and get your answer within the same day."
-      }
-    ],
-    tags: ["prashna", "horary", "question"]
+    tags: ["shubh-muhurat", "auspicious-timing", "panchang", "ujjain", "astro-abhishek-tripathi"]
   }
 ];
-
-export interface Service {
-  id: number;
-  slug: string;
-  icon: string;
-  title: string;
-  image: string;
-  price: string;
-  duration: string;
-  description: string;
-  featureList: string[];
-  tags: string[];
-}
