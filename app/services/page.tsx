@@ -81,12 +81,12 @@ export default function ServicesPage() {
                 
                   {/* Card Content */}
                   <div className="flex flex-col flex-grow p-4 md:p-5">
-                    <CardHeader className="p-0 pb-2">
+                    <CardHeader className="p-0 pb-">
                       <CardTitle className="text-base md:text-xl font-bold text-[#321414] group-hover:text-[#FF5722] transition-colors leading-tight h-12">
                         {service.title}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-0 flex-grow my-2">
+                    <CardContent className="p-0 flex-grow ">
                       <CardDescription className="text-xs sm:text-sm text-[#321414]/80 line-clamp-3">
                         {service.description}
                       </CardDescription>
