@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Mail, IndianRupee } from "lucide-react";
+import { Menu, X, Mail, IndianRupee, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navigation = [
@@ -64,15 +64,17 @@ export default function Header() {
           <div className="justify-self-end flex items-center">
             {/* Desktop Contact CTA */}
             <div className="hidden md:block">
-              <Button
-                type="button"
-                className="bg-[#321414] hover:bg-[#4A2A2A] text-[#FFD700] shadow-lg px-5 py-2 text-sm font-bold tracking-wide"
-                aria-label="Contact Us"
-              >
-                <Mail className="w-4 h-4 mr-2" />
-                Contact Us
-              </Button>
-            </div>
+  <a href="tel:+919827175769" aria-label="Call Now">
+    <Button
+      type="button"
+      className="bg-[#321414] hover:bg-[#4A2A2A] text-[#FFD700] shadow-lg px-5 py-2 text-sm font-bold tracking-wide"
+    >
+      <Phone className="w-4 h-4 mr-2" />
+      Call Now +91 9827175769
+    </Button>
+  </a>
+</div>
+
 
             {/* Mobile menu button */}
             <div className="md:hidden">

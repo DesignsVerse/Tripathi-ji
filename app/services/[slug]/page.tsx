@@ -3,7 +3,7 @@ import { services } from '@/data/services';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowLeft, Star, Check, Phone, Mail, Infinity, BookOpen, Zap, ScrollText, Home, BrainCircuit, CalendarCheck, Gem, ShieldAlert, Compass, Hash, Hand, HelpCircle, Flame, Moon, Heart, Target } from 'lucide-react';
+import { ArrowLeft, Star, Check, Phone, Zap, ScrollText, Home, BrainCircuit, CalendarCheck, Gem, ShieldAlert, Compass, Hash, Hand, HelpCircle, Flame, Moon, Heart, Target, BookOpen } from 'lucide-react'; // Changed Mail to Zap
 import Link from 'next/link';
 
 interface PageProps {
@@ -12,7 +12,7 @@ interface PageProps {
   };
 }
 
-// UPDATED: Icon colors now match the new brand palette
+// Icon map remains the same
 const iconMap = {
   'janm-patrika': <ScrollText className="w-8 h-8 text-[#FF5722]" />,
   'kundli-ghar-tak': <Home className="w-8 h-8 text-[#FF9933]" />,
@@ -26,7 +26,6 @@ const iconMap = {
   'kp-astrology': <Target className="w-8 h-8 text-[#FF5722]" />,
   'sadesati': <Moon className="w-8 h-8 text-violet-600" />,
   'manglik': <Flame className="w-8 h-8 text-red-700" />,
-  'kaalsarp': <Infinity className="w-8 h-8 text-yellow-700" />,
   'numerology': <Hash className="w-8 h-8 text-cyan-600" />,
   'muhurat': <CalendarCheck className="w-8 h-8 text-green-600" />,
 };
@@ -40,6 +39,10 @@ export default function ServiceDetailPage({ params }: PageProps) {
   if (!service) notFound();
 
   const relatedServices = services.filter(s => s.id !== service.id).slice(0, 3);
+
+  // Construct the dynamic WhatsApp message
+  const whatsappMessage = `Namaste Pandit ji, mujhko ${service.title} book karni hai`;
+  const whatsappUrl = `https://wa.me/919827175769?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#FFF9F2] to-white">
@@ -111,7 +114,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Right Sidebar */}
+            {/* Right Sidebar - UPDATED */}
             <div className="lg:col-span-1">
               <Card className="sticky top-24 shadow-lg border border-[#FFEBD5] bg-gradient-to-br from-white to-[#FFF9F2]">
                 <CardContent className="p-6">
@@ -120,15 +123,21 @@ export default function ServiceDetailPage({ params }: PageProps) {
                     <p className="text-[#321414]/80">Starting from ₹{service.startingPrice}</p>
                   </div>
                   
-                  <Button className="w-full bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white mb-4 py-3 h-auto">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Instant Consultation
-                  </Button>
+                  {/* Call Now Button */}
+                  <a href="tel:+919827175769">
+                    <Button className="w-full bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white mb-4 py-3 h-auto">
+                      <Phone className="w-5 h-5 mr-2" />
+                      Instant Consultation
+                    </Button>
+                  </a>
                   
-                  <Button variant="outline" className="w-full border-[#FF9933] text-[#FF5722] hover:bg-[#FFF5EB] hover:text-[#E64A19] py-3 h-auto">
-                    <Mail className="w-5 h-5 mr-2" />
-                    Email Inquiry
-                  </Button>
+                  {/* WhatsApp Booking Button */}
+                  <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" className="w-full border-[#FF9933] text-[#FF5722] hover:bg-[#FFF5EB] hover:text-[#E64A19] py-3 h-auto">
+                      <Zap className="w-5 h-5 mr-2" />
+                      Book on WhatsApp
+                    </Button>
+                  </a>
 
                   <div className="mt-6 pt-6 border-t border-[#FFEBD5]">
                     <h4 className="font-medium text-[#321414] mb-3">Service Includes:</h4>
@@ -159,17 +168,19 @@ export default function ServiceDetailPage({ params }: PageProps) {
                   <div className="h-40 bg-gradient-to-r from-[#FFF5EB] to-[#FFEBD5] flex items-center justify-center relative">
                     <div className="absolute inset-0 opacity-10 bg-[url('/assets/pattern.svg')]"></div>
                     <div className="relative z-10 p-4 bg-white rounded-full shadow-md border border-[#FFD700]/50">
-                      {service.slug}
+                      {iconMap[service.slug as keyof typeof iconMap] || <BookOpen className="w-8 h-8 text-[#FF5722]" />}
                     </div>
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-lg font-bold text-[#321414] mb-2">{service.title}</h3>
                     <p className="text-[#321414]/80 text-sm mb-4 line-clamp-2">{service.description}</p>
-                    <Link href={`/services/${service.slug}`}>
-                      <Button variant="outline" className="w-full border-gray-300 text-[#321414]/90 hover:bg-[#FFF5EB] hover:border-[#FF9933] hover:text-[#FF5722]">
-                        View Details
-                        <BookOpen className="w-4 h-4 ml-2" />
-                      </Button>
+                    <Link href={`/services/${service.slug}`} legacyBehavior>
+                      <a className="w-full">
+                        <Button variant="outline" className="w-full border-gray-300 text-[#321414]/90 hover:bg-[#FFF5EB] hover:border-[#FF9933] hover:text-[#FF5722]">
+                          View Details
+                          <BookOpen className="w-4 h-4 ml-2" />
+                        </Button>
+                      </a>
                     </Link>
                   </CardContent>
                 </Card>

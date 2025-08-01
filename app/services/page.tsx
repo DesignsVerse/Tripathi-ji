@@ -1,14 +1,14 @@
+
 import { services } from '@/data/services';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import {
   ArrowRight, Star, Gem, Award, Users, CheckCircle, BookOpen, Zap,
   ScrollText, Home, BrainCircuit, ShieldAlert, Compass, Hand, HelpCircle, Heart,
-  Target, Moon, Flame, Infinity, Hash, CalendarCheck, Sparkles
+  Target, Moon, Flame, Infinity as InfinityIcon, Hash, CalendarCheck, Sparkles
 } from 'lucide-react';
+
 
 // Icon map with brand colors
 const iconMap: { [key: string]: React.ReactNode } = {
@@ -24,10 +24,11 @@ const iconMap: { [key: string]: React.ReactNode } = {
   'krishnamurti-paddhati': <Target className="w-6 h-6 sm:w-8 sm:h-8 text-[#FF5722]" />,
   'sadesati-report': <Moon className="w-6 h-6 sm:w-8 sm:h-8 text-violet-600" />,
   'manglik-dosha-report': <Flame className="w-6 h-6 sm:w-8 sm:h-8 text-red-700" />,
-  'kaalsarp-dosha-analysis': <Infinity className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-700" />,
+  'kaalsarp-dosha-analysis': <InfinityIcon className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-700" />,
   'numerology-analysis': <Hash className="w-6 h-6 sm:w-8 sm:h-8 text-cyan-600" />,
   'shubh-muhurat': <CalendarCheck className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />,
 };
+
 
 export default function ServicesPage() {
   return (
@@ -73,8 +74,8 @@ export default function ServicesPage() {
                   <div className="h-28 sm:h-40 bg-gradient-to-br from-[#FFF9F2] to-[#FFEBD5] flex items-center justify-center relative">
                     <div className="absolute inset-0 opacity-10 bg-[url('/assets/pattern.svg')]"></div>
                     <div className="relative z-10 p-3 sm:p-4 bg-white rounded-full shadow-lg border border-[#FFD700]/50">
-                      {/* UPDATED: Dynamic icon lookup */}
-                      { <Star className="w-6 h-6 sm:w-8 sm:h-8 text-[#FF9933]" />}
+                      {/* Dynamic icon based on service.icon */}
+                      {iconMap[service.icon] || <Star className="w-6 h-6 sm:w-8 sm:h-8 text-[#FF9933]" />}
                     </div>
                   </div>
                 
@@ -186,13 +187,19 @@ export default function ServicesPage() {
               Begin your journey to clarity and success with our expert astrological guidance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-[#FF5722] hover:bg-orange-50 font-bold px-8 py-3 shadow-lg transform hover:scale-105 transition-all text-base">
-                Book Consultation
-                <Zap className="w-5 h-5 ml-2 text-[#FF5722]" />
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 px-8 py-3 transform hover:scale-105 transition-all text-base">
-                Call Now +91 XXXXX XXXXX
-              </Button>
+            <a href="https://wa.me/919827175769?text=Namaste%20Pandit%20ji,%20Mujhko%20Puja%20ki%20jankari%20cahiey%20hai" target="_blank" rel="noopener noreferrer">
+  <Button size="lg" className="bg-white text-[#FF5722] hover:bg-orange-50 font-bold px-8 py-3 shadow-lg transform hover:scale-105 transition-all text-base">
+    Book Consultation
+    <Zap className="w-5 h-5 ml-2 text-[#FF5722]" />
+  </Button>
+</a>
+
+<a href="tel:+919827175769">
+  <Button variant="outline" size="lg" className="bg-white text-[#FF5722] hover:bg-orange-50 font-bold px-8 py-3 shadow-lg transform hover:scale-105 transition-all">
+    Call Now +91 9827175769
+  </Button>
+</a>
+
             </div>
           </div>
         </section>

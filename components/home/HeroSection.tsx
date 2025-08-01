@@ -115,7 +115,7 @@ export default function HeroSection() {
                     <div className="w-7 h-7 sm:w-8 sm:h-8 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg">
                       <Star className="w-4 h-4 sm:w-5 sm:h-5 text-[#321414] fill-current" />
                     </div>
-                    <p className="font-bold text-base sm:text-lg md:text-xl">Indore MahaKal Temple</p>
+                    <p className="font-bold text-base sm:text-lg md:text-xl">Ujjain Mahakal </p>
                   </div>
                 </div>
               </div>

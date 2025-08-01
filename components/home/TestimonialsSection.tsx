@@ -56,7 +56,6 @@ export default function TestimonialsSection() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#321414] mb-4">
             <span className="relative inline-block">
               Transformations
-              <span className="absolute -bottom-2 left-0 w-full h-2 bg-gradient-to-r from-[#FFD700] to-[#FF5722] z-0 rounded"></span>
             </span>{' '}
             <span className="text-[#FF5722]">Through Vedic Wisdom</span>
           </h2>
