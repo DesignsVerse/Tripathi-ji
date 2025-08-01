@@ -8,6 +8,8 @@ import FAQSection from '@/components/home/FAQSection';
 import SupportBox from '@/components/home/SupportBox';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import AboutPage from './about/page';
+import AboutPanditji from '@/components/home/panditjiabout';
 
 export default function Home() {
   return (
@@ -16,10 +18,12 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
+        <AboutPanditji />
         <AchievementsSection />
         <BlogSection />
-        <TestimonialsSection />
         <CTASection />
+        <TestimonialsSection />
+        
         <FAQSection />
       </main>
      

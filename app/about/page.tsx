@@ -93,7 +93,7 @@ Known for his precise analysis and ethical practice, Abhishek ji blends ancient 
               <div className="relative">
                 <div className="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white">
                   <img
-                    src="/astrologer-profile.jpg"
+                    src="/cta/panditji.jpg"
                     alt="Astrologer Abhishek Tripathi in Ujjain providing vedic astrology consultation"
                     className="w-full h-[500px] object-cover object-top"
                   />

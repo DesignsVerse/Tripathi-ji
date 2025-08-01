@@ -161,7 +161,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
                   <div className="h-40 bg-gradient-to-r from-[#FFF5EB] to-[#FFEBD5] flex items-center justify-center relative">
                     <div className="absolute inset-0 opacity-10 bg-[url('/assets/pattern.svg')]"></div>
                     <div className="relative z-10 p-4 bg-white rounded-full shadow-md border border-[#FFD700]/50">
-                      { <Star className="w-8 h-8 text-[#FF9933]" />}
+                      {service.slug}
                     </div>
                   </div>
                   <CardContent className="p-6">

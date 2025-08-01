@@ -1,23 +1,26 @@
 'use client';
 
 import Link from 'next/link';
-import { services } from '@/data/services'; // Make sure the path is correct
+import { services } from '@/data/services';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Star, Sun, Sparkles, Heart, Briefcase, Gem, Clock } from 'lucide-react';
+import { ArrowRight, Star, Sun, Sparkles, Heart, Briefcase, Gem, Clock, BookOpen } from 'lucide-react';
 
-// Icon mapping for services
-const serviceIcons = {
-  Sun: <Sun className="w-7 h-7 text-white" />,
-  Sparkles: <Sparkles className="w-7 h-7 text-white" />,
-  Heart: <Heart className="w-7 h-7 text-white" />,
-  Briefcase: <Briefcase className="w-7 h-7 text-white" />,
-  Gem: <Gem className="w-7 h-7 text-white" />,
-  Clock: <Clock className="w-7 h-7 text-white" />,
+// Icon mapping for services - ensure the key matches the 'icon' property in your services data
+const serviceIcons: { [key: string]: React.ReactNode } = {
+  'janm-patrika': <BookOpen className="w-7 h-7 text-white" />,
+  'kundli-ghar-tak': <Sun className="w-7 h-7 text-white" />,
+  'falit-jyotish': <Sparkles className="w-7 h-7 text-white" />,
+  'kundli-milan': <Heart className="w-7 h-7 text-white" />,
+  'career-business': <Briefcase className="w-7 h-7 text-white" />,
+  'gemstone-astrology': <Gem className="w-7 h-7 text-white" />,
+  'shubh-muhurat': <Clock className="w-7 h-7 text-white" />,
 };
 
 export default function ServicesSection() {
-  const featuredServices = services.slice(0, 6);
+  // Show 6 services on desktop, 4 on mobile
+  const servicesToShowDesktop = services.slice(0, 6);
+  const servicesToShowMobile = services.slice(0, 4);
 
   return (
     <section className="py-16 md:py-20 bg-[#FFF9F2] relative overflow-hidden">
@@ -25,7 +28,6 @@ export default function ServicesSection() {
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-12 left-12 text-[#FF9933] text-7xl animate-pulse">✧</div>
         <div className="absolute bottom-12 right-12 text-[#FF9933] text-7xl animate-pulse">✦</div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#FF9933_1px,transparent_1px)] bg-[length:16px_16px]"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -39,69 +41,75 @@ export default function ServicesSection() {
             Astrological Services for a Balanced Life
           </h2>
           <p className="text-lg md:text-xl text-[#321414]/80 max-w-3xl mx-auto leading-relaxed">
-            Explore our range of specialized services, rooted in the timeless wisdom of Vedic & KP Astrology, designed to bring you clarity and purpose.
+            Explore our specialized services, rooted in the timeless wisdom of Vedic & KP Astrology, designed to bring you clarity and purpose.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {featuredServices.map((service: any) => (
-            <Card 
-              key={service.id} 
-              className="group relative overflow-hidden rounded-2xl shadow-lg border border-[#FF9933]/20 hover:border-[#FF5722]/40 transition-all duration-300 bg-white/90 hover:bg-white flex flex-col"
-            >
-              <div className="absolute -inset-px  rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-              
-              <div className="relative flex flex-col h-full">
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <CardHeader className="px-5 pt-5 pb-3">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#FF9933] to-[#FF5722] rounded-lg flex items-center justify-center shadow-md">
-                      {serviceIcons[service.icon as keyof typeof serviceIcons]}
-                    </div>
-                    <CardTitle className="text-xl font-bold text-[#321414] group-hover:text-[#FF5722] transition-colors duration-300">
-                      {service.title}
-                    </CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent className="px-5 pb-5 flex-grow flex flex-col">
-                  <CardDescription className="text-base text-[#321414]/80 leading-relaxed mb-4 flex-grow">
-                    {service.description}
-                  </CardDescription>
-                  <Link href={`/services/${service.slug}`} className="mt-auto">
-                    <Button 
-                      variant="outline" 
-                      className="w-full border-2 border-[#FF9933]/80 text-[#FF5722] hover:bg-[#FF5722] hover:text-white hover:border-[#FF5722] font-semibold rounded-lg shadow-sm group-hover:shadow-md transition-all duration-300"
-                    >
-                      Learn More
-                      <ArrowRight className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
-                </CardContent>
-              </div>
-            </Card>
+        {/* Services Grid - HIDDEN on small screens, VISIBLE on lg screens */}
+        <div className="hidden lg:grid grid-cols-3 gap-8">
+          {servicesToShowDesktop.map((service) => (
+            <ServiceCard key={`desktop-${service.id}`} service={service} />
+          ))}
+        </div>
+
+        {/* Services Grid - VISIBLE on small screens, HIDDEN on lg screens */}
+        <div className="grid grid-cols-2 gap-4 lg:hidden">
+          {servicesToShowMobile.map((service) => (
+            <ServiceCard key={`mobile-${service.id}`} service={service} />
           ))}
         </div>
 
         {/* View All CTA */}
-        <div className="text-center">
+        <div className="text-center mt-12 md:mt-16">
           <Link href="/services">
             <Button 
               size="lg" 
-              className="group bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#FF9933] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg"
+              className="group bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-4 text-lg"
             >
               View All Services
-              <ArrowRight className="w-6 h-6 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </Link>
         </div>
       </div>
     </section>
+  );
+}
+
+// Reusable Service Card Component
+function ServiceCard({ service }: { service: typeof services[0] }) {
+  return (
+    <Card className="group hover:shadow-xl transition-all duration-300 border border-[#FFD700]/50 rounded-2xl overflow-hidden flex flex-col bg-white">
+      {/* Icon Header */}
+      <div className="h-32 sm:h-40 bg-gradient-to-br from-[#FFF9F2] to-[#FFEBD5] flex items-center justify-center relative">
+        <div className="relative z-10 p-4 bg-gradient-to-r from-[#FF9933] to-[#FF5722] rounded-full shadow-lg">
+          {serviceIcons[service.slug] || <Star className="w-7 h-7 text-white" />}
+        </div>
+      </div>
+    
+      {/* Card Content */}
+      <div className="flex flex-col flex-grow p-4 md:p-5">
+        <CardHeader className="p-0 pb-2">
+          <CardTitle className="text-base md:text-xl font-bold text-[#321414] group-hover:text-[#FF5722] transition-colors leading-tight h-12">
+            {service.title}
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="p-0 flex-grow my-2">
+          <CardDescription className="text-xs sm:text-sm text-[#321414]/80 line-clamp-3">
+            {service.description}
+          </CardDescription>
+        </CardContent>
+
+        {/* Price and CTA */}
+        <div className="mt-auto pt-4 border-t border-gray-100">
+          <Link href={`/services/${service.slug}`} passHref>
+            <Button variant="outline" size="sm" className="w-full border-gray-300 text-[#321414]/90 hover:bg-[#FFF5EB] hover:border-[#FF9933] hover:text-[#FF5722] text-xs sm:text-sm font-semibold">
+              View Details
+              <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </div>
+    </Card>
   );
 }
