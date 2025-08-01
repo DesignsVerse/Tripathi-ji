@@ -1,8 +1,6 @@
 import { notFound } from 'next/navigation';
 import { services } from '@/data/services';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowLeft, Star, Check, Phone, Mail, Infinity, BookOpen, Zap, ScrollText, Home, BrainCircuit, CalendarCheck, Gem, ShieldAlert, Compass, Hash, Hand, HelpCircle, Flame, Moon, Heart, Target } from 'lucide-react';
@@ -180,7 +178,6 @@ export default function ServiceDetailPage({ params }: PageProps) {
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }

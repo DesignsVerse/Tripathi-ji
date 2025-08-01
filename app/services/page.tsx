@@ -1,7 +1,6 @@
 import { services } from '@/data/services';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -198,7 +197,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }

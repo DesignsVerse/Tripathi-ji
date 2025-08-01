@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { blogPosts } from "@/data/blog";
-import SupportBox from "@/components/home/SupportBox";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, Tag, Star } from "lucide-react";
@@ -196,7 +196,6 @@ export default function BlogDetailPage({ params }: PageProps) {
         </section>
       </main>
 
-      <SupportBox />
 
       {/* Mobile sticky share bar */}
       <div className="fixed xl:hidden bottom-0 left-0 right-0 bg-white z-30 border-t border-[#FFEBD5] flex px-4 py-3 gap-4 justify-between">

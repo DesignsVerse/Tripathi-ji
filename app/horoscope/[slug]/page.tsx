@@ -1,9 +1,7 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { horoscopes } from '@/data/horoscope';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
+
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, Star, Sparkles, Zap, Heart, Gem } from 'lucide-react';
 import Link from 'next/link';
@@ -177,7 +175,6 @@ export default function HoroscopeDetailPage({ params }: { params: HoroscopeParam
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }

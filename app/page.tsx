@@ -5,10 +5,6 @@ import BlogSection from '@/components/home/BlogSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import FAQSection from '@/components/home/FAQSection';
-import SupportBox from '@/components/home/SupportBox';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import AboutPage from './about/page';
 import AboutPanditji from '@/components/home/panditjiabout';
 
 export default function Home() {

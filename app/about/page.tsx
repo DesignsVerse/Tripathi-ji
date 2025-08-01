@@ -1,6 +1,4 @@
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Star, Award, Users, Clock, BookOpen, Heart, Shield, Target, Sparkles, Gem, Globe, Scroll } from 'lucide-react';
@@ -282,7 +280,6 @@ Known for his precise analysis and ethical practice, Abhishek ji blends ancient 
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }

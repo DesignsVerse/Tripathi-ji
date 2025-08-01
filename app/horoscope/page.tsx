@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { horoscopes } from '@/data/horoscope';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Sparkles, Star } from 'lucide-react';
@@ -114,7 +113,6 @@ export default function HoroscopePage() {
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }

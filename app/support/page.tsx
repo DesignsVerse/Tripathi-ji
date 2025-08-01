@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -210,7 +209,6 @@ export default function SupportPage() {
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }

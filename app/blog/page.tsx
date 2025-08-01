@@ -1,8 +1,6 @@
 "use client";
 import { blogPosts } from '@/data/blog';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import SupportBox from '@/components/home/SupportBox';
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -146,7 +144,6 @@ export default function BlogPage() {
           </div>
         </section>
       </main>
-      <SupportBox />
     </div>
   );
 }
