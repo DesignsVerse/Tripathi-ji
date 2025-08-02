@@ -18,7 +18,7 @@ export default function CTASection() {
             <div className="relative h-[300px] sm:h-[300px] md:h-[300px] w-full">
               <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700] to-[#FF5722] rounded-2xl blur-lg opacity-30"></div>
               <img
-                src="/cta/papa-2.jpg" 
+                src="/hero/mahakaal.jpg" 
                 alt="Honoring the profound legacy of the distinguished astrologer, Pandit Shri R.K. Tripathi Ji"
                 className="relative w-full h-full object-cover rounded-2xl shadow-2xl border-2 border-white/50"
               />

@@ -32,15 +32,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
           {/* Brand Info */}
           <div className="col-span-1 lg:col-span-2">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#FF9933] to-[#FF5722] rounded-full flex items-center justify-center shadow-xl">
-                <Star className="w-8 h-8 text-[#FFD700]" />
-              </div>
-              <div>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-[#FFD700]">Astro Abhishek Tripathi</h2>
-                <p className="text-[#FF9933] font-medium text-lg">Vedic & KP Astrologer, Ujjain</p>
-              </div>
-            </div>
+          <div className="flex items-center space-x-4 mb-6">
+  <div className="relative w-16 h-16">
+    <div className="w-16 h-16 bg-gradient-to-br from-[#FF9933] to-[#FF5722] rounded-full flex items-center justify-center shadow-xl overflow-hidden">
+      <img 
+        src="/logo/logo1.png" 
+        alt="Astro Abhishek Logo" 
+        className="w-full h-full object-cover rounded-full"
+      />
+    </div>
+    
+  </div>
+  <div>
+    <h2 className="text-2xl md:text-3xl font-extrabold text-[#FFD700]">Astro Abhishek Tripathi</h2>
+    <p className="text-[#FF9933] font-medium text-lg">Vedic & KP Astrologer, Ujjain</p>
+  </div>
+</div>
+
             <p className="text-[#FF9933]/90 mb-8 max-w-lg text-base md:text-lg leading-relaxed">
               Continuing the sacred astrological legacy of his father & guru, Pandit R.K. Tripathi Ji, Abhishek Tripathi offers authentic guidance to find clarity, purpose, and balance.
             </p>

@@ -25,21 +25,24 @@ export default function Header() {
 
           {/* 1. Logo (Left Aligned) */}
           <div className="justify-self-start">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative flex-shrink-0">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#321414] rounded-full flex items-center justify-center shadow-lg ring-2 ring-[#FFD700]/60">
-                  <span className="text-[#FFD700] font-extrabold text-2xl sm:text-3xl">ॐ</span>
-                </div>
-                <div className="absolute -bottom-1 -right-1 bg-[#FFD700] text-[#321414] rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center text-xs font-bold shadow-md border-2 border-white">
-                  <IndianRupee className="w-3 h-3 sm:w-4 sm:h-4" />
-                </div>
-              </div>
-              <div>
-                <h1 className="text-lg font-bold text-[#321414] leading-tight drop-shadow-sm whitespace-nowrap">Astro Abhishek Tripathi</h1>
-                <p className="block text-xs text-[#321414] font-medium">Vedic Astrology & Numerology Expert</p>
-              </div>
-            </Link>
-          </div>
+  <Link href="/" className="flex items-center gap-3">
+    <div className="relative flex-shrink-0">
+      <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#321414] rounded-full flex items-center justify-center shadow-lg ring-2 ring-[#FFD700]/60 overflow-hidden">
+        <img 
+          src="/logo/logo1.png" 
+          alt="Astro Abhishek Logo" 
+          className="w-full h-full object-cover rounded-full"
+        />
+      </div>
+      
+    </div>
+    <div>
+      <h1 className="text-lg font-bold text-[#321414] leading-tight drop-shadow-sm whitespace-nowrap">Astro Abhishek Tripathi</h1>
+      <p className="block text-xs text-[#321414] font-medium">Vedic Astrology & Numerology Expert</p>
+    </div>
+  </Link>
+</div>
+
 
           {/* 2. Desktop Navigation (Center Aligned) */}
           <nav className="hidden md:flex justify-self-center items-center gap-1 lg:gap-2">
