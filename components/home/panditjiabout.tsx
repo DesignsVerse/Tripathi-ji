@@ -28,7 +28,7 @@ export default function AboutPanditji() {
             {/* Image Section */}
             <div className="md:w-2/5 p-6 flex items-center justify-center bg-orange-50">
               <img
-                src="/cta/panditji-1.jpg"
+                src="/cta/t.jpg"
                 alt="Pandit Abhishek Tripathi"
                 className="w-full max-w-xs h-auto object-cover rounded-lg shadow-sm border-2 border-orange-200"
               />

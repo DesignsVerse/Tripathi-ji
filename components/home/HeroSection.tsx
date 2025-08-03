@@ -11,11 +11,11 @@ export default function HeroSection() {
         <div className="absolute top-10 left-10 text-[#FF5722]/20 text-6xl sm:text-7xl animate-pulse">✧</div>
         <div className="absolute bottom-20 right-16 text-[#FF5722]/20 text-6xl sm:text-7xl animate-pulse">✦</div>
         <div className="absolute top-1/3 right-1/4 text-[#FFD700]/20 text-5xl sm:text-6xl animate-pulse">★</div>
-        
+
         {/* Subtle cosmic dust particles */}
         <div className="absolute inset-0 opacity-10">
           {[...Array(20)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="absolute rounded-full bg-[#FF5722]"
               style={{
@@ -30,7 +30,7 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
-      
+
       {/* Golden border accent */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent">
         <div className="absolute inset-0 bg-[#FFD700] opacity-20 animate-[pulse_3s_infinite]" />
@@ -44,7 +44,7 @@ export default function HeroSection() {
               <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#321414] animate-[spin_5s_linear_infinite]" />
               <span className="ml-2 sm:ml-3 text-sm sm:text-base font-bold text-[#321414]">Vedic & KP Astrology Expert in Ujjain</span>
             </div>
-            
+
             <div className="space-y-4 sm:space-y-5">
               <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-[#321414]">
                 <span className="block">Navigate Your Life with</span>
@@ -55,7 +55,7 @@ export default function HeroSection() {
                   <span className="absolute -bottom-1 left-0 w-full h-1.5 sm:h-2 bg-gradient-to-r from-[#FFD700] to-[#FF5722] rounded-full z-0" />
                 </span>
               </h1>
-              
+
               <p className="text-sm sm:text-lg px-2 text-[#321414]/90 leading-relaxed  max-w-lg">
                 Inheriting the sacred legacy of his father, Pandit R.K. Tripathi Ji, Abhishek Tripathi guides you with profound insights from Vedic & KP Astrology to unlock your true potential.
               </p>
@@ -97,18 +97,20 @@ export default function HeroSection() {
               </Button>
             </div>
           </div>
-          
+
           {/* Image Content */}
           <div className="w-full flex justify-center order-1 lg:order-2 h-64 sm:h-80 md:h-[450px] lg:h-[550px] relative">
             <div className="absolute -inset-2 sm:-inset-3 rounded-xl lg:rounded-2xl bg-gradient-to-br from-[#FFD700] via-[#FF9933] to-[#FF5722] opacity-30 blur-md z-0" />
-            
+
             <div className="relative z-10 h-full w-full rounded-xl lg:rounded-2xl overflow-hidden shadow-2xl lg:shadow-3xl border-l-4 border-t-4 border-r-2 border-b-2 border-[#FFD700]">
               <img
-                src="/hero/papa-3.jpg"
-                alt="Astro Abhishek Tripathi - Astrologer in Ujjain"
-                className="w-full h-full object-cover object-center"
+                src="/hero/1.jpg"
+                alt="..."
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 30%' }} // x y
               />
-              
+
+
               <div className="absolute inset-0 bg-gradient-to-t from-[#321414]/80 via-transparent to-transparent flex items-end p-4 sm:p-6">
                 <div className="text-white">
                   <div className="flex items-center space-x-2 sm:space-x-3 mb-1 sm:mb-2">
@@ -120,7 +122,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            
+
             <div className="hidden md:absolute md:-bottom-4 md:-left-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border-2 border-[#FFD700] z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
               <div className="flex items-center">
                 <div className="w-9 h-9 bg-[#FF5722] rounded-full flex items-center justify-center shadow-md">
@@ -132,7 +134,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            
+
             <div className="hidden md:absolute md:-top-4 md:-right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border-2 border-[#FFD700] z-20 transform rotate-3 hover:rotate-0 transition-transform duration-300">
               <div className="flex items-center">
                 <div className="w-9 h-9 bg-[#321414] rounded-full flex items-center justify-center shadow-md">
