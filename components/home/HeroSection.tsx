@@ -76,7 +76,7 @@ export default function HeroSection() {
                   <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF5722] animate-[bounce_2s_infinite_delay_1s]" />
                 </div>
                 <div>
-                  <p className="text-sm sm:text-base font-bold">20+ Years</p>
+                  <p className="text-sm sm:text-base font-bold">5+ Years</p>
                   <p className="text-xs sm:text-sm text-[#321414]/80">of Legacy</p>
                 </div>
               </div>
