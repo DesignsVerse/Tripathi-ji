@@ -6,6 +6,7 @@ import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CTASection from '@/components/home/CTASection';
 import FAQSection from '@/components/home/FAQSection';
 import AboutPanditji from '@/components/home/panditjiabout';
+import PhysicsKundaliBanner from '@/components/home/kundali';
 
 export default function Home() {
   return (
@@ -16,10 +17,10 @@ export default function Home() {
         <ServicesSection />
         <AboutPanditji />
         <AchievementsSection />
+        <PhysicsKundaliBanner/>
         <BlogSection />
         <CTASection />
         <TestimonialsSection />
-        
         <FAQSection />
       </main>
      
