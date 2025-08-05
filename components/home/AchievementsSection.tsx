@@ -14,14 +14,14 @@ const achievements = [
   },
   {
     icon: Clock,
-    number: 20,
+    number: 5,
     suffix: '+',
     label: 'Years of Legacy',
     description: 'Continuing a sacred tradition'
   },
   {
     icon: BookOpen,
-    number: 10000,
+    number: 6000,
     suffix: '+',
     label: 'Kundlis Analyzed',
     description: 'In-depth birth chart readings'
