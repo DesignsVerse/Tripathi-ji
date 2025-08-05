@@ -83,19 +83,31 @@ export default function HeroSection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 pt-3 w-full sm:w-auto justify-center md:justify-start">
-              <Button className="relative overflow-hidden group bg-gradient-to-br from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-bold shadow-lg sm:shadow-xl hover:shadow-[#FF5722]/50 transition-all duration-300 min-w-[180px]">
-                <span className="relative z-10 flex items-center">
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                  Book a Consultation
-                </span>
-              </Button>
-              <Button variant="outline" className="relative overflow-hidden group border-2 border-[#321414] text-[#321414] hover:bg-[#FF9933]/10 hover:border-[#FF5722] px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-bold shadow-sm sm:shadow-md transition-all duration-300 min-w-[180px]">
-                <span className="relative z-10 flex items-center">
-                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                  Explore Services
-                </span>
-              </Button>
-            </div>
+  {/* WhatsApp Button */}
+  <a
+    href="https://wa.me/919827175769?text=Namaste%20Pandit%20Ji%20I%20want%20to%20know%20more%20about%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button className="relative overflow-hidden group bg-gradient-to-br from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-bold shadow-lg sm:shadow-xl hover:shadow-[#FF5722]/50 transition-all duration-300 min-w-[180px]">
+      <span className="relative z-10 flex items-center">
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+        WhatsApp Us
+      </span>
+    </Button>
+  </a>
+
+  {/* Call Now Button */}
+  <a href="tel:+919827175769">
+    <Button variant="outline" className="relative overflow-hidden group border-2 border-[#321414] text-[#321414] hover:bg-[#FF9933]/10 hover:border-[#FF5722] px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-bold shadow-sm sm:shadow-md transition-all duration-300 min-w-[180px]">
+      <span className="relative z-10 flex items-center">
+        <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+        Call Now
+      </span>
+    </Button>
+  </a>
+</div>
+
           </div>
 
           {/* Image Content */}

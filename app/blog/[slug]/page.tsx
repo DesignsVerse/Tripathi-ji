@@ -3,7 +3,7 @@ import { blogPosts } from "@/data/blog";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, Tag, Star } from "lucide-react";
+import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, Tag, Star, Phone } from "lucide-react";
 import Link from "next/link";
 
 interface PageProps {
@@ -154,23 +154,45 @@ export default function BlogDetailPage({ params }: PageProps) {
           <aside className="xl:col-span-4 col-span-1 space-y-6 sticky top-24 h-max">
             {/* CTA Card */}
             <Card className="bg-gradient-to-br from-[#FF5722] to-[#FF9933] text-white border-0 shadow-xl rounded-2xl">
-              <CardContent className="p-7 text-center">
-                <div className="w-14 h-14 bg-white/20 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <Star className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Personalized Guidance</h3>
-                <p className="text-sm mb-4 leading-relaxed opacity-90">
-                  Get an exclusive astrological reading from Pandit Tripathi.
-                </p>
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  className="w-full bg-white text-[#FF5722] hover:bg-white/90 font-semibold rounded-lg"
-                >
-                  Book Consultation
-                </Button>
-              </CardContent>
-            </Card>
+  <CardContent className="p-7 text-center">
+    <div className="w-14 h-14 bg-white/20 rounded-full mx-auto mb-3 flex items-center justify-center">
+      <Star className="w-7 h-7 text-white" />
+    </div>
+    <h3 className="text-xl font-bold mb-2">Personalized Guidance</h3>
+    <p className="text-sm mb-4 leading-relaxed opacity-90">
+      Get an exclusive astrological reading from Pandit Tripathi.
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+      {/* WhatsApp Button */}
+      <a
+        href="https://wa.me/919827175769?text=Namaste%20Pandit%20Ji%20I%20want%20to%20know%20more%20about%20services"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex-1"
+      >
+        <Button className="w-full relative overflow-hidden group bg-white hover:bg-[#FF5722] text-black hover:text-white px-4 py-3 text-sm sm:text-base font-bold shadow-lg transition-all duration-300">
+          <span className="relative z-10 flex items-center justify-center">
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+            WhatsApp Us
+          </span>
+        </Button>
+      </a>
+
+      {/* Call Now Button */}
+      <a href="tel:+919827175769" className="flex-1">
+        <Button
+          variant="outline"
+          className="w-full border-white text-black hover:bg-white hover:text-[#FF5722] px-4 py-3 text-sm sm:text-base font-bold transition-all duration-300"
+        >
+          <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+          Call Now
+        </Button>
+      </a>
+    </div>
+  </CardContent>
+</Card>
+
 
             {/* Topics / Tags */}
             <Card className="shadow rounded-2xl border-[#FFD700]/30">
@@ -199,14 +221,36 @@ export default function BlogDetailPage({ params }: PageProps) {
 
       {/* Mobile sticky share bar */}
       <div className="fixed xl:hidden bottom-0 left-0 right-0 bg-white z-30 border-t border-[#FFEBD5] flex px-4 py-3 gap-4 justify-between">
-        <Button variant="outline" size="sm" className="flex-1 text-[#FF5722] border-[#FF5722]">
-          <Share2 className="w-5 h-5" />
-          <span className="ml-2">Share</span>
-        </Button>
-        <Button variant="default" size="sm" className="flex-1 bg-[#FF9933] text-white font-semibold">
-          Book Consultation
-        </Button>
-      </div>
+  
+  {/* Call Now Button */}
+  <a href="tel:+919827175769" className="flex-1">
+    <Button
+      variant="outline"
+      size="sm"
+      className="w-full text-[#FF5722] border-[#FF5722] font-semibold"
+    >
+      <Phone className="w-4 h-4 mr-2" />
+      Call Now
+    </Button>
+  </a>
+
+  {/* WhatsApp Button */}
+  <a
+    href="https://wa.me/919827175769?text=Namaste%20Pandit%20Ji%20I%20want%20to%20know%20more%20about%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex-1"
+  >
+    <Button className="relative overflow-hidden group bg-gradient-to-br from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base font-bold shadow-lg sm:shadow-xl hover:shadow-[#FF5722]/50 transition-all duration-300 w-full">
+      <span className="relative z-10 flex items-center justify-center">
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+        WhatsApp Us
+      </span>
+    </Button>
+  </a>
+  
+</div>
+
     </div>
   );
 }

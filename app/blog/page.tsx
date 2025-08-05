@@ -111,37 +111,7 @@ export default function BlogPage() {
             <Star className="absolute bottom-1/3 right-1/3 w-6 h-6 text-white" />
           </div>
           
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="inline-flex items-center px-4 py-2 bg-white/20 rounded-full border border-white/30 mb-6">
-              <Sparkles className="w-5 h-5 text-white" />
-              <span className="ml-2 text-sm font-bold">Cosmic Updates</span>
-            </div>
-            
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6">
-              Stay Updated with <span className="text-[#FFD700]">Spiritual Wisdom</span>
-            </h2>
-            <p className="text-sm md:text-lg text-orange-100 mb-6 md:mb-8 max-w-2xl mx-auto">
-              Subscribe for weekly astrological insights and spiritual guidance.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-300 text-sm md:text-base"
-              />
-              <Button 
-                size="lg"
-                className="bg-white text-orange-600 hover:bg-orange-50 px-6 py-3 text-sm md:text-base font-medium"
-              >
-                Subscribe
-              </Button>
-            </div>
-            
-            <p className="text-orange-200 text-xs md:text-sm mt-4">
-              No spam, unsubscribe anytime. Your spiritual journey is sacred to us.
-            </p>
-          </div>
+          
         </section>
       </main>
     </div>

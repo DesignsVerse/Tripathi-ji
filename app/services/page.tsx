@@ -101,10 +101,21 @@ export default function ServicesPage() {
                             <BookOpen className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
                           </Button>
                         </Link>
-                        <Button size="sm" className="w-full bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white text-xs sm:text-sm font-semibold">
-                          Book Now
-                          <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
-                        </Button>
+                        <Link
+  href={`https://wa.me/919827175769?text=${encodeURIComponent(`Namaste Pandit Ji Mujhe ${service.title} Book Karni Hai`)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-full"
+>
+  <Button
+    size="sm"
+    className="w-full bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white text-xs sm:text-sm font-semibold"
+  >
+    Book Now
+    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
+  </Button>
+</Link>
+
                       </div>
                     </div>
                   </div>

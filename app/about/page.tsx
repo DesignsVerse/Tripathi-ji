@@ -80,12 +80,32 @@ Known for his precise analysis and ethical practice, Abhishek ji blends ancient 
                   </div>
                 </div>
 
-                <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white shadow-lg hover:shadow-[#FF5722]/50 mt-6"
-                >
-                  Book Personal Consultation
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6">
+  {/* WhatsApp Button */}
+  <a
+    href="https://wa.me/919827175769?text=Nashit%20Pandit,%20I%20want%20to%20know%20more%20about%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button 
+      size="lg" 
+      className="bg-gradient-to-r from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white shadow-lg hover:shadow-[#FF5722]/50"
+    >
+        Book Personal Consultation
+    </Button>
+  </a>
+
+  {/* Call Now Button */}
+  <a href="tel:+919827175769">
+    <Button 
+      size="lg" 
+      className="bg-gradient-to-r from-[#FF5722] to-[#FF9933] hover:from-[#E64A19] hover:to-[#FF5722] text-white shadow-lg hover:shadow-[#FF5722]/50"
+    >
+      Call Now
+    </Button>
+  </a>
+</div>
+
               </div>
               
               <div className="relative">
@@ -270,13 +290,33 @@ Known for his precise analysis and ethical practice, Abhishek ji blends ancient 
               "To bridge ancient Vedic wisdom with modern life, helping you discover your true purpose and live in harmony with your cosmic blueprint."
             </p>
             
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              className="bg-white text-[#FF5722] hover:bg-orange-50 px-8 py-4 font-bold shadow-lg hover:shadow-xl"
-            >
-              Begin Your Journey
-            </Button>
+            <div className="flex flex-col text-center  gap-3 sm:gap-4 mt-6">
+  <a
+    href="https://wa.me/919827175769?text=Namaste%20Pandit%20Ji%20I%20want%20to%20know%20more%20about%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button 
+      size="lg" 
+      variant="secondary" 
+      className="bg-white text-[#FF5722] hover:bg-orange-50 px-8 py-4 font-bold shadow-lg hover:shadow-xl"
+    >
+      WhatsApp Us
+    </Button>
+  </a>
+
+  {/* Call Now Button */}
+  <a href="tel:+919827175769">
+    <Button 
+      size="lg" 
+      variant="secondary" 
+      className="bg-white text-[#FF5722] hover:bg-orange-50 px-8 py-4 font-bold shadow-lg hover:shadow-xl"
+    >
+      Call Now
+    </Button>
+  </a>
+</div>
+
           </div>
         </section>
       </main>

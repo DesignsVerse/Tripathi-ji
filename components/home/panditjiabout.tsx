@@ -69,13 +69,26 @@ export default function AboutPanditji() {
                   </div>
                 </div>
 
-                <div className="pt-4">
-                  <Link href="/contact" passHref>
-                    <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 text-base font-medium rounded-lg shadow-sm transition-colors">
-                      Book Consultation
-                    </Button>
-                  </Link>
-                </div>
+                <div className="pt-4 flex flex-col sm:flex-row gap-3 sm:gap-4">
+  
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/919827175769?text=Namaste%20Pandit%20Ji%20I%20want%20to%20know%20more%20about%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 text-base font-medium rounded-lg shadow-sm transition-colors">
+    Book Consultation    </Button>
+  </a>
+
+  {/* Call Now */}
+  <a href="tel:+919827175769">
+    <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 text-base font-medium rounded-lg shadow-sm transition-colors">
+      Call Now
+    </Button>
+  </a>
+</div>
+
               </div>
             </div>
           </div>

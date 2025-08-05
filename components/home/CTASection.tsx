@@ -36,18 +36,40 @@ export default function CTASection() {
               <p className="text-base sm:text-lg md:text-xl text-[#321414]/80 mb-6 sm:mb-8 leading-relaxed">
                 At <strong className="bg-[#FF9933]/30 text-[#321414] font-bold px-2 py-1 rounded-md">R.K. Tripathi Jyotish Kendra</strong>, the sacred tradition of the revered guru and spiritual guide, Pandit Shri R.K. Tripathi Ji, is proudly continued by his son, Abhishek Tripathi. Find clarity and direction with trusted guidance rooted in generations of astrological mastery.
               </p>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="relative overflow-hidden group bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#FF9933] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
-                    Book a Consultation 
-                  </span>
-                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-                </Button>
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-3 pt-3 w-full sm:w-auto justify-center md:justify-start">
+  {/* WhatsApp Button */}
+  <a
+    href="https://wa.me/919827175769?text=Namaste%20Pandit%20Ji%20I%20want%20to%20know%20more%20about%20services"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button
+      size="lg"
+      className="relative overflow-hidden group bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#FF9933] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
+    >
+      <span className="relative z-10 flex items-center justify-center">
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+        WhatsApp Us
+      </span>
+      <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+    </Button>
+  </a>
+
+  {/* Call Now Button */}
+  <a href="tel:+919827175769">
+    <Button
+      size="lg"
+      variant="outline"
+      className="relative overflow-hidden group border-2 border-[#321414] text-[#321414] hover:bg-[#FF9933]/10 hover:border-[#FF5722] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-sm hover:shadow-md transition-all duration-300 w-full sm:w-auto"
+    >
+      <span className="relative z-10 flex items-center justify-center">
+        <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
+        Call Now
+      </span>
+    </Button>
+  </a>
+</div>
+
             </div>
           </div>
         </div>

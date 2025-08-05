@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Video, FileText, HelpCircle, Sparkles } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram, FileText, HelpCircle, Sparkles } from 'lucide-react';
 
 export default function SupportPage() {
   const [formData, setFormData] = useState({
@@ -36,10 +36,46 @@ export default function SupportPage() {
   };
 
   const contactMethods = [
-    { icon: Phone, title: 'Phone Support', description: 'Speak directly with Abhishek Tripathi', info: '+91 9827175769', availability: '9 AM - 9 PM IST', action: 'Call Now', color: 'bg-[#FF5722]' },
-    { icon: MessageCircle, title: 'WhatsApp Chat', description: 'Instant messaging support', info: '+91 9827175769', availability: '24/7 Available for Messages', action: 'Chat on WhatsApp', color: 'bg-[#25D366]' },
-    { icon: Mail, title: 'Email Support', description: 'For detailed written consultations', info: 'lucky.tipo@gmail.com', availability: 'Response within 4-6 hours', action: 'Send Email', color: 'bg-[#FF9933]' },
-    { icon: Video, title: 'Video Consultation', description: 'Personalized virtual guidance', info: 'Book a session', availability: 'By Appointment Only', action: 'Schedule a Call', color: 'bg-[#321414]' }
+    { 
+      icon: Phone, 
+      title: 'Call Pandit Ji', 
+      description: 'Speak directly with Abhishek Tripathi', 
+      info: '+91 9827175769', 
+      availability: '9 AM - 9 PM IST', 
+      action: 'Call Now', 
+      color: 'bg-[#FF5722]',
+      link: 'tel:+919827175769'
+    },
+    { 
+      icon: MessageCircle, 
+      title: 'WhatsApp Chat', 
+      description: 'Instant messaging support', 
+      info: '+91 9827175769', 
+      availability: '24/7 Available for Messages', 
+      action: 'Chat on WhatsApp', 
+      color: 'bg-[#25D366]',
+      link: 'https://wa.me/919827175769?text=Namaste%20Pandit%20ji%2C%20mujhe%20aapki%20services%20ke%20bare%20me%20jankari%20chahiye'
+    },
+    { 
+      icon: Mail, 
+      title: 'Email Support', 
+      description: 'For detailed written consultations', 
+      info: 'lucky.tipo@gmail.com', 
+      availability: 'Response within 4-6 hours', 
+      action: 'Send Email', 
+      color: 'bg-[#FF9933]',
+      link: 'mailto:lucky.tipo@gmail.com?subject=Service%20Information%20Request&body=Namaste%20Pandit%20ji%2C%0D%0A%0D%0AMujhe%20aapki%20services%20ke%20bare%20me%20jankari%20chahiye.'
+    },
+    { 
+      icon: Instagram, 
+      title: 'Instagram Profile', 
+      description: 'Follow us for updates and insights', 
+      info: '@astrotripathiujjain', 
+      availability: 'Daily updates and posts', 
+      action: 'Visit Profile', 
+      color: 'bg-[#E1306C]',
+      link: 'https://instagram.com/astrotripathiujjain'
+    }
   ];
 
   const supportTopics = [
@@ -105,9 +141,11 @@ export default function SupportPage() {
                         <p className="font-semibold text-[#321414] text-base">{method.info}</p>
                         <p className="text-sm text-[#321414]/70">{method.availability}</p>
                       </div>
-                      <Button className="w-full mt-4 bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white font-semibold rounded-lg">
-                        {method.action}
-                      </Button>
+                      <a href={method.link} target="_blank" rel="noopener noreferrer">
+                        <Button className="w-full mt-4 bg-gradient-to-r from-[#FF9933] to-[#FF5722] hover:from-[#FF5722] hover:to-[#E64A19] text-white font-semibold rounded-lg">
+                          {method.action}
+                        </Button>
+                      </a>
                     </CardContent>
                   </Card>
                 );
@@ -115,6 +153,7 @@ export default function SupportPage() {
             </div>
           </div>
         </section>
+
 
         {/* Contact Form & Info */}
         <section className="py-16 md:py-20 bg-[#FFF9F2]">
@@ -192,7 +231,7 @@ export default function SupportPage() {
                       <MapPin className="w-6 h-6 text-[#FF5722] mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-semibold text-[#321414]">Our Center</p>
-                        <p className="text-[#321414]/80">21/1, Mahakal Marg, Gali No. 1<br/>Infront Of Mahakal Temple, Ujjain (M.P) - 456006</p>
+                        <p className="text-[#321414]/80">21/1, R.K. Tripathi Jyotish Kendra, Gali No. 1<br/>In front of Mahakaleshwar Temple, Ujjain (M.P.) – 456006</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-4">
